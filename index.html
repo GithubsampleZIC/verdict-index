@@ -198,7 +198,13 @@ footer{border-top:1px solid var(--border);padding:3rem 2.5rem;max-width:1240px;m
     <div style="font-family:var(--mono);font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:.6rem;"><span style="display:block;width:14px;height:1px;background:var(--amber);"></span>Stay Informed</div>
     <p style="font-family:var(--sans);font-size:.85rem;color:var(--text-mid);line-height:1.75;">Get notified when a new evaluation is published or when a platform's score changes due to an incident. No weekly filler. No sponsored content. Ever.</p>
   </div>
-  <iframe src="https://subscribe-forms.beehiiv.com/202f55de-bde0-45be-b927-3a5a5e875f64" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width:573px;height:200px;margin:0;border-radius:0px!important;background-color:transparent;box-shadow:0 0 #0000;max-width:100%;"></iframe>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;max-width:480px;">
+    <div style="display:flex;gap:.75rem;width:100%;max-width:480px;">
+      <input type="email" id="subscribe-email" placeholder="your@email.com" style="flex:1;background:var(--surface2);border:1px solid var(--border2);color:var(--text);font-family:var(--mono);font-size:.75rem;padding:.85rem 1rem;outline:none;min-width:0;" onkeydown="if(event.key===&apos;Enter&apos;)window.open(&apos;https://getverdict.beehiiv.com/subscribe?email=&apos;+encodeURIComponent(this.value),&apos;_blank&apos;)">
+      <button onclick="var e=document.getElementById(&apos;subscribe-email&apos;).value;if(e)window.open(&apos;https://getverdict.beehiiv.com/subscribe?email=&apos;+encodeURIComponent(e),&apos;_blank&apos;);else window.open(&apos;https://getverdict.beehiiv.com/subscribe&apos;,&apos;_blank&apos;)" style="background:var(--amber);color:var(--black);font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.4rem;border:none;cursor:pointer;white-space:nowrap;transition:opacity .2s;" onmouseover="this.style.opacity=&apos;.85&apos;" onmouseout="this.style.opacity=&apos;1&apos;">Get notified</button>
+    </div>
+    <p style="font-family:var(--mono);font-size:.52rem;color:var(--text-dim);letter-spacing:.08em;">No weekly filler &middot; No sponsored content &middot; Unsubscribe anytime</p>
+  </div>
 </div>
 
 <!-- MARQUEE -->
