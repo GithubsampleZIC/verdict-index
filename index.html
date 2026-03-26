@@ -22,9 +22,9 @@ body{background:var(--black);color:var(--text);font-family:var(--sans);font-weig
 header{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2.5rem;height:58px;display:flex;align-items:center;justify-content:space-between;background:rgba(8,8,8,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
 .logo{display:flex;align-items:baseline;gap:.75rem;}
 .logo-mark{font-family:var(--serif);font-size:1.25rem;letter-spacing:.15em;color:var(--amber);}
-.logo-sub{font-family:var(--mono);font-size:.5rem;letter-spacing:.22em;color:var(--text-dim);text-transform:uppercase;}
+.logo-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;color:var(--text-dim);text-transform:uppercase;}
 nav{display:flex;align-items:center;gap:2.5rem;}
-nav a{font-family:var(--mono);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .2s;}
+nav a{font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .2s;}
 nav a:hover{color:var(--amber);}
 .nav-cta{padding:.3rem .9rem;border:1px solid var(--amber-dim);color:var(--amber)!important;transition:all .2s!important;}
 .nav-cta:hover{background:var(--amber)!important;color:var(--black)!important;}
@@ -33,7 +33,7 @@ nav a:hover{color:var(--amber);}
 .hero-grid{position:absolute;inset:0;z-index:0;background-image:linear-gradient(rgba(201,162,74,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,74,.025) 1px,transparent 1px);background-size:64px 64px;}
 .hero-glow{position:absolute;top:15%;left:45%;transform:translateX(-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(201,162,74,.05) 0%,transparent 65%);z-index:0;}
 .hero-content{position:relative;z-index:1;max-width:1100px;margin:0 auto;width:100%;}
-.hero-eyebrow{font-family:var(--mono);font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1.8rem;display:flex;align-items:center;gap:.8rem;animation:fadeUp .7s ease .1s both;}
+.hero-eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1.8rem;display:flex;align-items:center;gap:.8rem;animation:fadeUp .7s ease .1s both;}
 .hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--amber);}
 .hero-title{font-family:var(--serif);font-size:clamp(3.2rem,7.5vw,6.5rem);line-height:1.02;letter-spacing:-.015em;margin-bottom:.15em;animation:fadeUp .7s ease .2s both;}
 .hero-title em{font-style:italic;color:var(--amber);}
@@ -43,20 +43,20 @@ nav a:hover{color:var(--amber);}
 .stat-item:last-child{border-right:none;margin-right:0;}
 .stat-num{font-family:var(--mono);font-size:2rem;font-weight:600;color:var(--text);display:block;line-height:1;}
 .stat-num span{color:var(--amber);}
-.stat-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-top:.4rem;display:block;}
+.stat-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-top:.4rem;display:block;}
 
 .marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1rem 0;overflow:hidden;}
 .marquee-track{display:flex;gap:4rem;animation:marquee 40s linear infinite;white-space:nowrap;}
 .marquee-track:hover{animation-play-state:paused;}
-.marquee-item{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);flex-shrink:0;}
+.marquee-item{display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);flex-shrink:0;}
 .marquee-dot{width:3px;height:3px;background:var(--amber);border-radius:50%;}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 .section-wrap{padding:7rem 2.5rem;max-width:1240px;margin:0 auto;}
-.section-label{font-family:var(--mono);font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem;}
+.section-label{font-family:var(--mono);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem;}
 .section-label::before{content:'';display:block;width:14px;height:1px;background:var(--amber);}
 .section-title{font-family:var(--serif);font-size:clamp(1.9rem,3vw,2.8rem);line-height:1.15;margin-bottom:.6rem;}
-.section-note{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--text-dim);margin-bottom:4rem;border-left:2px solid var(--border2);padding-left:.8rem;line-height:1.7;}
+.section-note{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--text-dim);margin-bottom:4rem;border-left:2px solid var(--border2);padding-left:.8rem;line-height:1.7;}
 
 /* EVAL CARDS */
 .eval-grid{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);background:var(--border);}
@@ -66,12 +66,12 @@ nav a:hover{color:var(--amber);}
 .eval-card:hover::before{background:var(--amber);}
 .card-left{padding:2.5rem 2rem 2.5rem 2.5rem;display:grid;grid-template-columns:1fr 280px;gap:2rem;align-items:start;}
 .platform-name{font-family:var(--serif);font-size:1.8rem;line-height:1;margin-bottom:.4rem;}
-.platform-category{font-family:var(--mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.4rem;}
-.platform-owner{font-family:var(--mono);font-size:.52rem;letter-spacing:.12em;color:var(--amber-dim);margin-bottom:.6rem;}
-.platform-date{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);margin-bottom:1.4rem;}
-.key-finding{font-size:.8rem;line-height:1.65;color:var(--text-mid);border-left:2px solid var(--border2);padding-left:.75rem;margin-bottom:1.5rem;}
+.platform-category{font-family:var(--mono);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.4rem;}
+.platform-owner{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;color:var(--amber-dim);margin-bottom:.6rem;}
+.platform-date{font-family:var(--mono);font-size:.62rem;color:var(--text-dim);margin-bottom:1.4rem;}
+.key-finding{font-size:.85rem;line-height:1.65;color:var(--text-mid);border-left:2px solid var(--border2);padding-left:.75rem;margin-bottom:1.5rem;}
 .incident-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
-.tag{font-family:var(--mono);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .6rem;border:1px solid;}
+.tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .7rem;border:1px solid;}
 .tag-red{border-color:rgba(179,58,44,.4);color:#c85040;background:var(--red-bg);}
 .tag-amber{border-color:var(--amber-dim);color:var(--amber);background:var(--amber-bg);}
 .tag-dim{border-color:var(--border2);color:var(--text-dim);}
@@ -80,13 +80,13 @@ nav a:hover{color:var(--amber);}
 /* DIM LIST */
 .dim-list{display:flex;flex-direction:column;gap:.6rem;padding-top:.2rem;}
 .dim-row{display:grid;grid-template-columns:12px 1fr 48px;align-items:center;gap:.6rem;}
-.dim-letter{font-family:var(--mono);font-size:.6rem;font-weight:600;color:var(--amber);}
+.dim-letter{font-family:var(--mono);font-size:.7rem;font-weight:600;color:var(--amber);}
 .dim-letter.dim-inactive{color:var(--text-dim);}
-.dim-bar-track{height:2px;background:var(--border2);position:relative;overflow:hidden;}
+.dim-bar-track{height:3px;background:var(--border2);position:relative;overflow:hidden;}
 .dim-bar-fill{height:100%;background:var(--amber);transition:width 1.2s cubic-bezier(.16,1,.3,1);}
 .dim-bar-fill.fill-low{background:var(--red);}
 .dim-bar-fill.fill-inactive{background:repeating-linear-gradient(90deg,var(--border2) 0,var(--border2) 3px,transparent 3px,transparent 6px);width:100%!important;}
-.dim-val{font-family:var(--mono);font-size:.55rem;color:var(--text-dim);text-align:right;}
+.dim-val{font-family:var(--mono);font-size:.65rem;color:var(--text-dim);text-align:right;}
 .dim-val.val-high{color:var(--text);}
 .dim-val.val-inactive{color:var(--border2);letter-spacing:.1em;}
 
@@ -106,32 +106,31 @@ nav a:hover{color:var(--amber);}
 .score-display{margin-top:1.5rem;text-align:center;}
 .score-main{font-family:var(--mono);font-weight:600;font-size:3.2rem;line-height:1;color:var(--amber);display:inline;}
 .score-denom{font-family:var(--mono);font-size:1rem;color:var(--text-dim);margin-left:.1em;}
-.score-layer{font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-top:.4rem;}
+.score-layer{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-top:.4rem;}
 
 /* PENDING */
 .eval-card-pending{background:var(--surface);padding:1.8rem 2.5rem;display:flex;align-items:center;justify-content:space-between;opacity:.38;}
 .pending-name{font-family:var(--serif);font-size:1.2rem;color:var(--text-dim);}
-.pending-label{font-family:var(--mono);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);padding:.25rem .65rem;border:1px solid var(--border2);}
+.pending-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);padding:.25rem .65rem;border:1px solid var(--border2);}
 
 /* METHODOLOGY */
 .layer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:3.5rem;}
 .layer-card{background:var(--surface);padding:2.2rem;}
-.layer-num{font-family:var(--mono);font-size:.55rem;letter-spacing:.22em;color:var(--amber-dim);margin-bottom:1rem;}
+.layer-num{font-family:var(--mono);font-size:.65rem;letter-spacing:.22em;color:var(--amber-dim);margin-bottom:1rem;}
 .layer-title{font-family:var(--serif);font-size:1.15rem;margin-bottom:.7rem;}
-.layer-desc{font-size:.82rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.2rem;}
+.layer-desc{font-size:.85rem;color:var(--text-mid);line-height:1.75;margin-bottom:1.2rem;}
 .layer-items{display:flex;flex-direction:column;gap:.4rem;}
-.layer-item{font-family:var(--mono);font-size:.58rem;letter-spacing:.06em;color:var(--text-dim);display:flex;align-items:flex-start;gap:.5rem;}
+.layer-item{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;color:var(--text-dim);display:flex;align-items:flex-start;gap:.5rem;}
 .layer-item::before{content:'→';color:var(--amber-dim);flex-shrink:0;}
 .dim-table-wrap{margin-top:4rem;}
-.dim-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.72rem;border:1px solid var(--border);}
-.dim-table th{padding:.7rem 1.2rem;text-align:left;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--border);background:var(--surface);}
+.dim-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.75rem;border:1px solid var(--border);}
+.dim-table th{padding:.7rem 1.2rem;text-align:left;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);border-bottom:1px solid var(--border);background:var(--surface);}
 .dim-table td{padding:1rem 1.2rem;border-bottom:1px solid var(--border);vertical-align:middle;}
 .dim-table tr:last-child td{border-bottom:none;}
 .dim-table tr:hover td{background:var(--surface2);}
 .d-code{color:var(--amber);font-weight:600;font-size:.9rem;}
 .d-name{color:var(--text);}
-.d-jp{color:var(--text-dim);font-size:.62rem;display:block;margin-top:.15rem;}
-.d-desc{color:var(--text-dim);font-size:.65rem;line-height:1.55;}
+.d-desc{color:var(--text-dim);font-size:.7rem;line-height:1.55;}
 .d-weight{color:var(--amber);font-weight:600;}
 
 /* ABOUT */
@@ -139,12 +138,12 @@ nav a:hover{color:var(--amber);}
 .principle-card{background:var(--surface);padding:2.2rem;display:flex;gap:1.2rem;}
 .principle-icon{font-family:var(--mono);font-size:1.1rem;color:var(--amber);flex-shrink:0;margin-top:.1rem;}
 .principle-title{font-family:var(--sans);font-weight:500;font-size:.9rem;margin-bottom:.4rem;}
-.principle-text{font-size:.78rem;color:var(--text-mid);line-height:1.72;}
+.principle-text{font-size:.82rem;color:var(--text-mid);line-height:1.72;}
 
 footer{border-top:1px solid var(--border);padding:3rem 2.5rem;max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;}
 .footer-logo{font-family:var(--serif);font-size:1.1rem;color:var(--amber);}
-.footer-sub{font-family:var(--mono);font-size:.52rem;color:var(--text-dim);margin-top:.3rem;letter-spacing:.1em;line-height:1.8;}
-.footer-note{font-family:var(--mono);font-size:.52rem;letter-spacing:.08em;color:var(--text-dim);text-align:right;line-height:1.9;}
+.footer-sub{font-family:var(--mono);font-size:.62rem;color:var(--text-dim);margin-top:.3rem;letter-spacing:.1em;line-height:1.8;}
+.footer-note{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;color:var(--text-dim);text-align:right;line-height:1.9;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 @media(max-width:900px){
@@ -195,7 +194,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2.5rem;max-width:1240px;m
 <!-- SUBSCRIBE -->
 <div id="subscribe" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:4rem 2.5rem;display:flex;flex-direction:column;align-items:center;gap:1.5rem;">
   <div style="text-align:center;max-width:520px;">
-    <div style="font-family:var(--mono);font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:.6rem;"><span style="display:block;width:14px;height:1px;background:var(--amber);"></span>Stay Informed</div>
+    <div style="font-family:var(--mono);font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--amber);margin-bottom:.75rem;display:flex;align-items:center;justify-content:center;gap:.6rem;"><span style="display:block;width:14px;height:1px;background:var(--amber);"></span>Stay Informed</div>
     <p style="font-family:var(--sans);font-size:.85rem;color:var(--text-mid);line-height:1.75;">Get notified when a new evaluation is published or when a platform's score changes due to an incident. No weekly filler. No sponsored content. Ever.</p>
   </div>
   <div style="display:flex;flex-direction:column;align-items:center;gap:1rem;width:100%;max-width:480px;">
@@ -203,7 +202,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2.5rem;max-width:1240px;m
       <input type="email" id="subscribe-email" placeholder="your@email.com" style="flex:1;background:var(--surface2);border:1px solid var(--border2);color:var(--text);font-family:var(--mono);font-size:.75rem;padding:.85rem 1rem;outline:none;min-width:0;" onkeydown="if(event.key===&apos;Enter&apos;)window.open(&apos;https://getverdict.beehiiv.com/subscribe?email=&apos;+encodeURIComponent(this.value),&apos;_blank&apos;)">
       <button onclick="var e=document.getElementById(&apos;subscribe-email&apos;).value;if(e)window.open(&apos;https://getverdict.beehiiv.com/subscribe?email=&apos;+encodeURIComponent(e),&apos;_blank&apos;);else window.open(&apos;https://getverdict.beehiiv.com/subscribe&apos;,&apos;_blank&apos;)" style="background:var(--amber);color:var(--black);font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.4rem;border:none;cursor:pointer;white-space:nowrap;transition:opacity .2s;" onmouseover="this.style.opacity=&apos;.85&apos;" onmouseout="this.style.opacity=&apos;1&apos;">Get notified</button>
     </div>
-    <p style="font-family:var(--mono);font-size:.52rem;color:var(--text-dim);letter-spacing:.08em;">No weekly filler &middot; No sponsored content &middot; Unsubscribe anytime</p>
+    <p style="font-family:var(--mono);font-size:.62rem;color:var(--text-dim);letter-spacing:.08em;">No weekly filler &middot; No sponsored content &middot; Unsubscribe anytime</p>
   </div>
 </div>
 
@@ -1164,13 +1163,13 @@ footer{border-top:1px solid var(--border);padding:3rem 2.5rem;max-width:1240px;m
     <table class="dim-table">
       <thead><tr><th style="width:60px">Code</th><th>Dimension</th><th>What We Evaluate</th><th style="width:80px;text-align:right">Weight</th></tr></thead>
       <tbody>
-        <tr><td><span class="d-code">V</span></td><td><span class="d-name">Verifiability</span><span class="d-jp">検証可能性</span></td><td class="d-desc">Developer identity, OSS code disclosure, version transparency, third-party audits</td><td class="d-weight" style="text-align:right">20</td></tr>
-        <tr><td><span class="d-code" style="color:var(--text-dim)">E</span></td><td><span class="d-name" style="color:var(--text-dim)">Effectiveness</span><span class="d-jp">実効性</span></td><td class="d-desc">Task success rate, cost accuracy, performance degradation — <em>Layer 1 only</em></td><td style="text-align:right;color:var(--text-dim)">15</td></tr>
-        <tr><td><span class="d-code">R</span></td><td><span class="d-name">Resilience</span><span class="d-jp">耐障害性</span></td><td class="d-desc">CVE frequency & severity, patch response speed, structural failure patterns, supply chain integrity</td><td class="d-weight" style="text-align:right">20</td></tr>
-        <tr><td><span class="d-code">D</span></td><td><span class="d-name">Data Conduct</span><span class="d-jp">データ行動規範</span></td><td class="d-desc">GDPR posture, data minimization, AI training use disclosure, sub-processor transparency</td><td class="d-weight" style="text-align:right">15</td></tr>
-        <tr><td><span class="d-code">I</span></td><td><span class="d-name">Identity & Control</span><span class="d-jp">主権と制御</span></td><td class="d-desc">Emergency stop mechanisms, human-in-the-loop availability, permission chain documentation</td><td class="d-weight" style="text-align:right">10</td></tr>
-        <tr><td><span class="d-code">C</span></td><td><span class="d-name">Containment</span><span class="d-jp">境界遵守</span></td><td class="d-desc">Sandbox design philosophy (whitelist vs. blocklist), least-privilege defaults, tenant isolation</td><td class="d-weight" style="text-align:right">10</td></tr>
-        <tr><td><span class="d-code">T</span></td><td><span class="d-name">Transparency</span><span class="d-jp">透明性</span></td><td class="d-desc">CVE publication posture, incident disclosure speed, AI safety framework adoption</td><td class="d-weight" style="text-align:right">10</td></tr>
+        <tr><td><span class="d-code">V</span></td><td><span class="d-name">Verifiability</span></td><td class="d-desc">Developer identity, OSS code disclosure, version transparency, third-party audits</td><td class="d-weight" style="text-align:right">20</td></tr>
+        <tr><td><span class="d-code" style="color:var(--text-dim)">E</span></td><td><span class="d-name" style="color:var(--text-dim)">Effectiveness</span></td><td class="d-desc">Task success rate, cost accuracy, performance degradation — <em>Layer 1 only</em></td><td style="text-align:right;color:var(--text-dim)">15</td></tr>
+        <tr><td><span class="d-code">R</span></td><td><span class="d-name">Resilience</span></td><td class="d-desc">CVE frequency & severity, patch response speed, structural failure patterns, supply chain integrity</td><td class="d-weight" style="text-align:right">20</td></tr>
+        <tr><td><span class="d-code">D</span></td><td><span class="d-name">Data Conduct</span></td><td class="d-desc">GDPR posture, data minimization, AI training use disclosure, sub-processor transparency</td><td class="d-weight" style="text-align:right">15</td></tr>
+        <tr><td><span class="d-code">I</span></td><td><span class="d-name">Identity & Control</span></td><td class="d-desc">Emergency stop mechanisms, human-in-the-loop availability, permission chain documentation</td><td class="d-weight" style="text-align:right">10</td></tr>
+        <tr><td><span class="d-code">C</span></td><td><span class="d-name">Containment</span></td><td class="d-desc">Sandbox design philosophy (whitelist vs. blocklist), least-privilege defaults, tenant isolation</td><td class="d-weight" style="text-align:right">10</td></tr>
+        <tr><td><span class="d-code">T</span></td><td><span class="d-name">Transparency</span></td><td class="d-desc">CVE publication posture, incident disclosure speed, AI safety framework adoption</td><td class="d-weight" style="text-align:right">10</td></tr>
       </tbody>
     </table>
   </div>
