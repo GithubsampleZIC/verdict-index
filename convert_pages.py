@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Microsoft Copilot Studio Security Review — VERDICT Score: 61/85</title>
-<meta name="description" content="Independent security evaluation of Microsoft Copilot Studio. Score: 61/85. EchoLeak CVE-2025-32711 (CVSS 9.3), first zero-click prompt injection. VERDICT by ZinovaCreation.">
-<meta property="og:title" content="Microsoft Copilot Studio Security Review — VERDICT Score: 61/85">
-<meta property="og:description" content="Independent security evaluation of Microsoft Copilot Studio. Score: 61/85. EchoLeak CVE-2025-32711 (CVSS 9.3), first zero-click prompt injection. VERDICT by ZinovaCreation.">
-<meta property="og:url" content="https://getverdict.fyi/copilot-studio/">
-<meta property="og:type" content="article">
-<link rel="canonical" href="https://getverdict.fyi/copilot-studio/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
-<style>
+#!/usr/bin/env python3
+"""
+VERDICT Individual Page Converter — Old Dark Theme → New Light Theme
+Usage: python3 convert_pages.py <input_dir_or_file> [output_dir]
+
+Processes all index.html files in subdirectories, or a single file.
+Preserves all unique content (titles, meta, scores, radar data, etc.)
+while replacing the design system.
+"""
+
+import re
+import sys
+import os
+
+NEW_CSS = """<style>
 :root {
   --white:#FFFFFF;--ice:#F5F6F8;--navy:#1B2A4A;--navy-light:#2A3D66;
   --heading:#1A1A2E;--body:#4A5060;--caption:#6B7280;
@@ -98,72 +98,20 @@ footer{border-top:1px solid var(--divider);padding:2rem 3rem;max-width:960px;mar
   .radar-wrap{width:220px;height:220px;}
   footer{padding:2rem 1.5rem;}
 }
-</style>
-</head>
-<body>
+</style>"""
 
-<header>
+NEW_FONTS = '<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">'
+
+NEW_HEADER = """<header>
   <a href="/" class="logo">
     <span class="logo-mark">VERDICT</span>
     <span class="logo-divider"></span>
     <span class="logo-sub">AI Agent Trust Index</span>
   </a>
   <a href="/" class="back">← All Evaluations</a>
-</header>
+</header>"""
 
-<div class="wrap">
-  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; Microsoft Copilot Studio</div>
-
-  <h1>Microsoft Copilot Studio</h1>
-  <div class="meta">No-Code Agent Builder · Enterprise SaaS</div>
-  <div class="meta">Evaluated 2026.03.25 · Framework v0.3.1</div>
-  <div class="meta-owner">Microsoft Corporation</div>
-
-  <div class="score-hero">
-    <div><span class="score-big">61</span><span class="score-denom">&thinsp;/&thinsp;85</span></div>
-    <div class="score-meta">
-      Layer 0 · Public Documentation Only<br>
-      Rank #2 of 20 platforms evaluated<br>
-      Framework v0.3.1
-    </div>
-  </div>
-
-  <div class="finding">Highest compliance posture in this index: SOC 2, ISO 27001, FedRAMP, and HIPAA BAA all explicitly confirmed — the only platform with all four. CVE-2025-32711 &quot;EchoLeak&quot; (CVSS 9.3): first documented zero-click prompt injection on a production AI system. All CVEs patched server-side by Microsoft with no customer action required. SSRF and spoofing classes have recurred across the evaluation window.</div>
-
-  <div class="tags">
-    <span class="tag tag-red">EchoLeak · CVE-2025-32711 · CVSS 9.3</span>
-            <span class="tag tag-red">Zero-Click Prompt Injection · First in Industry</span>
-            <span class="tag tag-amber">SOC2 · ISO27001 · FedRAMP · HIPAA BAA</span>
-            <span class="tag tag-amber">Anthropic Sub-processor · Dec 2025</span>
-  </div>
-
-  <div class="radar-section">
-    <div class="radar-wrap">
-      <svg class="radar-svg" viewBox="0 0 240 240">
-        <polygon class="radar-ring" points="120.0,102.0 134.1,108.8 137.5,124.0 127.8,136.2 112.2,136.2 102.5,124.0 105.9,108.8"/><polygon class="radar-ring" points="120.0,84.0 148.1,97.6 155.1,128.0 135.6,152.4 104.4,152.4 84.9,128.0 91.9,97.6"/><polygon class="radar-ring" points="120.0,66.0 162.2,86.3 172.6,132.0 143.4,168.7 96.6,168.7 67.4,132.0 77.8,86.3"/><polygon class="radar-ring" points="120.0,48.0 176.3,75.1 190.2,136.0 151.2,184.9 88.8,184.9 49.8,136.0 63.7,75.1"/>
-        <line class="radar-axis" x1="120" y1="120" x2="120.0" y2="48.0"/><line class="radar-axis radar-axis-inactive" x1="120" y1="120" x2="176.3" y2="75.1"/><line class="radar-axis" x1="120" y1="120" x2="190.2" y2="136.0"/><line class="radar-axis" x1="120" y1="120" x2="151.2" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="88.8" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="49.8" y2="136.0"/><line class="radar-axis" x1="120" y1="120" x2="63.7" y2="75.1"/>
-        <g><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,62.4 120.0,120.0 158.6,128.8 140.8,163.2 98.1,165.4 63.8,132.8 69.3,79.6"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,62.4 120.0,120.0 158.6,128.8 140.8,163.2 98.1,165.4 63.8,132.8 69.3,79.6"/></g>
-        <text class="radar-label" x="120" y="26" text-anchor="middle">V</text><text class="radar-label radar-label-inactive" x="193" y="61" text-anchor="start">E</text><text class="radar-label" x="212" y="141" text-anchor="start">R</text><text class="radar-label" x="161" y="205" text-anchor="start">D</text><text class="radar-label" x="79" y="205" text-anchor="end">I</text><text class="radar-label" x="28" y="141" text-anchor="end">C</text><text class="radar-label" x="47" y="61" text-anchor="end">T</text>
-      </svg>
-    </div>
-    <div class="dim-list" id="dims" data-dims='[{"l": "V", "s": 16, "m": 20}, {"l": "E", "s": 0, "m": 15, "inactive": true}, {"l": "R", "s": 11, "m": 20}, {"l": "D", "s": 10, "m": 15}, {"l": "I", "s": 7, "m": 10}, {"l": "C", "s": 8, "m": 10}, {"l": "T", "s": 9, "m": 10}]'></div>
-  </div>
-
-  <div class="cta-bar">
-    <a href="/" class="cta-link">View All 20 Evaluations</a>
-    <a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-note">
-    VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>
-    VERDICT by ZinovaCreation · Est. 2026 · Japan · <a href="/">getverdict.fyi</a><br>
-    Evaluation tooling uses Claude (Anthropic). Bias disclosures in full reports.
-  </div>
-</footer>
-
-<script>
+NEW_SCRIPT = """<script>
 document.querySelectorAll('.dim-list').forEach(list => {
   const dims = JSON.parse(list.dataset.dims);
   dims.forEach(d => {
@@ -176,7 +124,85 @@ document.querySelectorAll('.dim-list').forEach(list => {
     list.innerHTML += '<div class="dim-row"><span class="dim-letter '+letterClass+'">'+d.l+'</span><div class="dim-bar-track"><div class="dim-bar-fill '+fillClass+'" style="width:'+(d.inactive?'100':pct)+'%"></div></div><span class="dim-val '+valClass+'">'+valText+'</span></div>';
   });
 });
-</script>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4dbc22ec4e18434e9bdbc01d644490c0"}'></script><!-- End Cloudflare Web Analytics -->
-</body>
-</html>
+</script>"""
+
+
+def convert_page(content):
+    # 1. Replace font link
+    content = re.sub(
+        r'<link href="https://fonts\.googleapis\.com/css2\?family=DM.*?" rel="stylesheet">',
+        NEW_FONTS,
+        content
+    )
+
+    # 2. Replace entire <style> block
+    content = re.sub(
+        r'<style>.*?</style>',
+        NEW_CSS,
+        content,
+        flags=re.DOTALL
+    )
+
+    # 3. Replace header
+    content = re.sub(
+        r'<header>.*?</header>',
+        NEW_HEADER,
+        content,
+        flags=re.DOTALL
+    )
+
+    # 4. Replace radar colors
+    content = content.replace('fill="#c9a24a"', 'fill="#1B2A4A"')
+    content = content.replace('stroke="#c9a24a"', 'stroke="#1B2A4A"')
+
+    # 5. Replace JS (remove val-high logic)
+    content = re.sub(
+        r'<script>\s*document\.querySelectorAll\(\'.dim-list\'\).*?</script>',
+        NEW_SCRIPT,
+        content,
+        flags=re.DOTALL
+    )
+
+    return content
+
+
+def process_file(filepath):
+    with open(filepath, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    new_content = convert_page(content)
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        f.write(new_content)
+
+    print(f"  ✓ {filepath}")
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python3 convert_pages.py <path>")
+        print("  path can be a single .html file or a directory containing platform folders")
+        sys.exit(1)
+
+    path = sys.argv[1]
+    count = 0
+
+    if os.path.isfile(path):
+        process_file(path)
+        count = 1
+    elif os.path.isdir(path):
+        for entry in sorted(os.listdir(path)):
+            subdir = os.path.join(path, entry)
+            index_file = os.path.join(subdir, 'index.html')
+            if os.path.isdir(subdir) and os.path.isfile(index_file):
+                process_file(index_file)
+                count += 1
+    else:
+        print(f"Error: {path} not found")
+        sys.exit(1)
+
+    print(f"\nDone. {count} file(s) converted.")
+
+
+if __name__ == '__main__':
+    main()
