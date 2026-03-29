@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The State of AI Agent Security Q1 2026 — VERDICT Independent Report</title>
+<meta name="description" content="VERDICT evaluated 20 AI agent platforms on security, privacy, and compliance. Scores range 30–65 out of 85. Two platforms on CISA KEV. Compliance badges do not predict security posture.">
+<meta property="og:title" content="The State of AI Agent Security Q1 2026 — VERDICT">
+<meta property="og:description" content="Independent evaluation of 20 AI agent platforms. Scores range 30–65/85. Two on CISA KEV. Compliance badges do not predict security posture.">
+<meta property="og:url" content="https://getverdict.fyi/report/q1-2026/">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://getverdict.fyi/report/q1-2026/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--white:#FFFFFF;--ice:#F5F6F8;--navy:#1B2A4A;--navy-light:#2A3D66;--heading:#1A1A2E;--body:#4A5060;--caption:#6B7280;--risk:#C4332B;--risk-bg:rgba(196,51,43,0.06);--caution:#C08520;--caution-bg:rgba(192,133,32,0.06);--safe:#2D7A4F;--neutral:#D0D4DC;--divider:#E2E5EB;--serif:'Source Serif 4',Georgia,serif;--sans:'Libre Franklin',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;--score:'Merriweather',Georgia,serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--white);color:var(--body);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased;}
+a{color:var(--navy);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+header{padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:var(--white);border-bottom:1px solid var(--divider);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);background:rgba(255,255,255,0.95);}
+.logo{display:flex;align-items:baseline;gap:.75rem;text-decoration:none;}
+.logo:hover{text-decoration:none;}
+.logo-mark{font-family:var(--serif);font-size:1.3rem;font-weight:700;letter-spacing:.1em;color:var(--navy);}
+.logo-divider{width:1px;height:18px;background:var(--divider);align-self:center;}
+.logo-sub{font-family:var(--sans);font-size:.8rem;font-weight:500;letter-spacing:.08em;color:var(--caption);text-transform:uppercase;}
+.back{font-family:var(--sans);font-size:.8rem;font-weight:500;color:var(--caption);text-decoration:none;}
+.back:hover{color:var(--navy);text-decoration:none;}
+
+/* REPORT HERO */
+.report-hero{max-width:800px;margin:0 auto;padding:4rem 3rem 3rem;}
+.report-id{font-family:var(--mono);font-size:.8rem;color:var(--caption);margin-bottom:2rem;}
+.report-title{font-family:var(--serif);font-size:clamp(2rem,4.5vw,2.8rem);font-weight:700;line-height:1.15;color:var(--heading);margin-bottom:.5rem;}
+.report-subtitle{font-family:var(--sans);font-size:1.1rem;color:var(--caption);margin-bottom:2rem;}
+.report-hook{font-size:1rem;line-height:1.75;color:var(--body);border-left:3px solid var(--navy);padding-left:1.2rem;margin-bottom:2.5rem;}
+
+/* STATS BAR */
+.stats-bar{display:flex;border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);margin-bottom:2.5rem;}
+.stat{flex:1;padding:1.2rem 0;text-align:center;border-right:1px solid var(--divider);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:var(--score);font-size:1.8rem;font-weight:900;color:var(--navy);display:block;line-height:1;font-variant-numeric:tabular-nums;}
+.stat-label{font-family:var(--mono);font-size:.7rem;color:var(--caption);margin-top:.3rem;display:block;letter-spacing:.04em;}
+
+.report-meta{font-family:var(--sans);font-size:.85rem;color:var(--caption);line-height:1.8;margin-bottom:1rem;}
+
+/* DOWNLOAD BAR */
+.download-bar{background:var(--ice);border:1px solid var(--divider);padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.download-text{font-family:var(--sans);font-size:.85rem;color:var(--body);}
+.download-btn{font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--white);background:var(--navy);padding:.5rem 1.2rem;border:none;cursor:pointer;text-decoration:none;transition:background .2s;}
+.download-btn:hover{background:var(--navy-light);text-decoration:none;}
+
+/* ARTICLE */
+.article{max-width:800px;margin:0 auto;padding:0 3rem 4rem;}
+
+/* TOC */
+.toc{border:1px solid var(--divider);padding:2rem;margin-bottom:3rem;}
+.toc-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--heading);margin-bottom:1rem;}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.toc-item{display:flex;align-items:baseline;gap:.75rem;}
+.toc-num{font-family:var(--mono);font-size:.8rem;color:var(--navy);min-width:1.5rem;}
+.toc-link{font-family:var(--sans);font-size:.85rem;color:var(--body);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
+.toc-link:hover{border-color:var(--navy);text-decoration:none;color:var(--navy);}
+
+/* SECTIONS */
+.section{margin-bottom:3.5rem;}
+.section-num{font-family:var(--mono);font-size:.8rem;font-weight:500;color:var(--navy);margin-bottom:.3rem;}
+.section h2{font-family:var(--serif);font-size:1.6rem;font-weight:600;line-height:1.25;color:var(--heading);margin-bottom:1.2rem;}
+.section h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--heading);margin-top:2rem;margin-bottom:.8rem;}
+.section p{margin-bottom:1rem;font-size:.95rem;line-height:1.8;}
+.section-divider{height:1px;background:var(--divider);margin:3rem 0;}
+
+/* CALLOUT */
+.callout{background:var(--ice);border-left:3px solid var(--navy);padding:1.2rem 1.5rem;margin:1.5rem 0;font-size:1rem;line-height:1.7;color:var(--navy);}
+
+/* HOW TO USE */
+.use-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:.9rem;}
+.use-table th{font-family:var(--mono);font-size:.75rem;color:var(--caption);text-align:left;padding:.6rem .8rem;background:var(--ice);border-bottom:2px solid var(--navy);letter-spacing:.04em;}
+.use-table td{padding:.7rem .8rem;border-bottom:1px solid var(--divider);vertical-align:top;}
+.use-table td:first-child{font-weight:600;color:var(--heading);white-space:nowrap;width:30%;}
+
+/* DATA TABLES */
+.data-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.85rem;}
+.data-table th{font-family:var(--mono);font-size:.75rem;color:var(--caption);text-align:left;padding:.6rem .8rem;background:var(--ice);border-bottom:2px solid var(--navy);letter-spacing:.04em;}
+.data-table td{padding:.6rem .8rem;border-bottom:1px solid var(--divider);vertical-align:top;}
+.data-table tr:hover td{background:var(--ice);}
+.data-table .rank{font-family:var(--mono);font-size:.85rem;color:var(--navy);}
+.data-table .platform{font-weight:600;color:var(--heading);}
+.data-table .score{font-family:var(--mono);font-size:.85rem;color:var(--navy);}
+.data-table .kev{font-family:var(--mono);font-size:.8rem;color:var(--risk);}
+.data-table .kev-none{color:var(--caption);}
+.data-table .row-kev{background:var(--risk-bg);}
+.data-table .dim-bold{font-weight:600;color:var(--heading);}
+.table-caption{font-family:var(--mono);font-size:.75rem;color:var(--caption);margin-top:.5rem;margin-bottom:2rem;}
+
+/* CTA */
+.cta-section{background:var(--ice);border:1px solid var(--divider);padding:2rem;margin:3rem 0;text-align:center;}
+.cta-section p{font-size:.95rem;color:var(--body);margin-bottom:1rem;}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.cta-link{font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--navy);padding:.6rem 1.5rem;border:1px solid var(--divider);text-decoration:none;transition:all .2s;}
+.cta-link:hover{background:var(--navy);color:var(--white);border-color:var(--navy);text-decoration:none;}
+
+/* CONTACT TABLE */
+.contact-table{width:auto;border-collapse:collapse;margin:1.5rem 0;font-size:.85rem;}
+.contact-table th{font-family:var(--mono);font-size:.75rem;color:var(--caption);text-align:left;padding:.5rem 1.5rem .5rem 0;white-space:nowrap;}
+.contact-table td{padding:.5rem 0;border-bottom:1px solid var(--divider);}
+
+/* FOOTER */
+footer{border-top:1px solid var(--divider);padding:2rem 3rem;max-width:800px;margin:0 auto;}
+.footer-note{font-family:var(--sans);font-size:.8rem;color:var(--caption);line-height:1.8;}
+.footer-note a{color:var(--navy);}
+
+@media(max-width:700px){
+  header{padding:0 1.5rem;}
+  .report-hero{padding:3rem 1.5rem 2rem;}
+  .article{padding:0 1.5rem 3rem;}
+  .stats-bar{flex-wrap:wrap;}
+  .stat{flex:none;width:50%;border-bottom:1px solid var(--divider);}
+  .stat:nth-child(2){border-right:none;}
+  footer{padding:2rem 1.5rem;}
+  .download-bar{flex-direction:column;gap:1rem;text-align:center;}
+  .cta-row{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">
+    <span class="logo-mark">VERDICT</span>
+    <span class="logo-divider"></span>
+    <span class="logo-sub">AI Agent Trust Index</span>
+  </a>
+  <a href="/" class="back">&larr; All Evaluations</a>
+</header>
+
+<!-- REPORT HERO -->
+<div class="report-hero">
+  <div class="report-id">VERDICT-RPT-2026-Q1-001</div>
+  <h1 class="report-title">The State of AI Agent Security</h1>
+  <div class="report-subtitle">Q1 2026 — Independent Evaluation Report</div>
+
+  <div class="report-hook">
+    88% of organizations have already experienced AI agent security incidents. Only 14.4% deployed agents with full security and IT approval. This report evaluates the 20 platforms they are choosing from.
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-num">20</span><span class="stat-label">Platforms Evaluated</span></div>
+    <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Critical CVEs Tracked</span></div>
+    <div class="stat"><span class="stat-num">2</span><span class="stat-label">CISA KEV Entries</span></div>
+    <div class="stat"><span class="stat-num">$0</span><span class="stat-label">Vendor Revenue</span></div>
+  </div>
+
+  <div class="report-meta">
+    Published March 28, 2026 · Framework v0.3.1 · Layer 0 (Public Documentation Only)<br>
+    External data cited: Gravitee State of AI Agent Security 2026 (n=900+), NIST CAISI RFI (932 responses)
+  </div>
+
+  <div class="download-bar">
+    <span class="download-text">Download the full report as PDF</span>
+    <a href="/#subscribe" class="download-btn">Subscribe to Download</a>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div class="article">
+
+  <!-- TOC -->
+  <nav class="toc">
+    <div class="toc-title">Contents</div>
+    <ol class="toc-list">
+      <li class="toc-item"><span class="toc-num">01</span><a href="#executive-summary" class="toc-link">Executive Summary</a></li>
+      <li class="toc-item"><span class="toc-num">02</span><a href="#rankings" class="toc-link">The VERDICT Index: Full Rankings</a></li>
+      <li class="toc-item"><span class="toc-num">03</span><a href="#badges" class="toc-link">Key Finding: Compliance Badges Do Not Predict Security Posture</a></li>
+      <li class="toc-item"><span class="toc-num">04</span><a href="#supply-chain" class="toc-link">Supply Chain: The Emerging Attack Surface</a></li>
+      <li class="toc-item"><span class="toc-num">05</span><a href="#sandbox" class="toc-link">Architecture Divergence: Sandbox Design as a Trust Signal</a></li>
+      <li class="toc-item"><span class="toc-num">06</span><a href="#cisa-kev" class="toc-link">CISA KEV: What Active Exploitation Means for Enterprise</a></li>
+      <li class="toc-item"><span class="toc-num">07</span><a href="#dimensions" class="toc-link">Dimension Analysis</a></li>
+      <li class="toc-item"><span class="toc-num">08</span><a href="#methodology" class="toc-link">Methodology: Framework v0.3.1</a></li>
+      <li class="toc-item"><span class="toc-num">09</span><a href="#bias" class="toc-link">Bias Disclosure and Limitations</a></li>
+      <li class="toc-item"><span class="toc-num">10</span><a href="#outlook" class="toc-link">Q2 2026 Outlook</a></li>
+      <li class="toc-item"><span class="toc-num">11</span><a href="#about" class="toc-link">About VERDICT</a></li>
+    </ol>
+  </nav>
+
+  <!-- 01 EXECUTIVE SUMMARY -->
+  <div class="section" id="executive-summary">
+    <div class="section-num">01</div>
+    <h2>Executive Summary</h2>
+    <p>VERDICT evaluated 20 AI agent and workflow automation platforms on security, privacy, and compliance during Q1 2026. All evaluations used publicly available information only (Layer 0), under Framework v0.3.1. No vendor was contacted prior to publication. No vendor revenue was accepted.</p>
+    <p>Scores ranged from 30 to 65 out of a maximum 85 points. The mean score was 48.1; the median was 47. The highest-scoring platform, Vertex AI Agent Builder, achieved 65/85 &mdash; 76.5% of the theoretical maximum. No platform reached 80%.</p>
+    <p>Two platforms are listed in the CISA Known Exploited Vulnerabilities catalog: n8n (CVE-2025-68613) and Langflow (CVE-2025-3248). Both have confirmed active exploitation in the wild.</p>
+
+    <h3>How to Use This Report</h3>
+    <table class="use-table">
+      <thead><tr><th>If you are a...</th><th>Start with...</th></tr></thead>
+      <tbody>
+        <tr><td>CTO or Engineering Lead</td><td>Section 02 (Rankings) and 05 (Sandbox Architecture) for platform selection criteria</td></tr>
+        <tr><td>CISO or Security Engineer</td><td>Section 03 (Badges vs. Security), 04 (Supply Chain), and 06 (CISA KEV) for risk assessment</td></tr>
+        <tr><td>Procurement or Compliance</td><td>Section 02 (Rankings table) and 07 (Dimension Analysis) for vendor evaluation frameworks</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">Compliance certifications do not reliably predict security posture. Platforms holding SOC 2, ISO 27001, and other certifications experienced critical vulnerabilities and supply chain compromises at rates indistinguishable from uncertified platforms.</div>
+
+    <p>This finding arrives at a moment of rapid, ungoverned deployment. According to Gravitee's 2026 survey of 900+ practitioners, 80.9% of technical teams have moved AI agents into production &mdash; but only 14.4% did so with full security and IT approval. The gap between adoption speed and security readiness defines the current landscape.</p>
+    <p>On March 24, 2026, LiteLLM &mdash; a library holding SOC 2 and ISO 27001 certifications &mdash; was compromised through its PyPI distribution. Approximately 47,000 downloads occurred within a three-hour attack window. The certifications provided no early warning. VERDICT had flagged the structural risk of unpinned dependencies across this index before the incident occurred.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 02 FULL RANKINGS -->
+  <div class="section" id="rankings">
+    <div class="section-num">02</div>
+    <h2>The VERDICT Index: Full Rankings</h2>
+    <p>All 20 platforms evaluated under Framework v0.3.1, ranked by total Layer 0 score. Tied scores sorted alphabetically.</p>
+
+    <table class="data-table">
+      <thead><tr><th>#</th><th>Platform</th><th>Score</th><th>Independence</th><th>CISA KEV</th></tr></thead>
+      <tbody>
+        <tr><td class="rank">1</td><td class="platform">Vertex AI Agent Builder</td><td class="score">65/85</td><td>Google (Alphabet)</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">2</td><td class="platform">Copilot Studio</td><td class="score">61/85</td><td>Microsoft</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">3</td><td class="platform">OpenAI Assistants API</td><td class="score">61/85</td><td>OpenAI</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">4</td><td class="platform">Agentforce</td><td class="score">58/85</td><td>Salesforce</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">5</td><td class="platform">AutoGen</td><td class="score">56/85</td><td>Microsoft Research</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">6</td><td class="platform">Pipedream</td><td class="score">56/85</td><td>Workday (acquired)</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">7</td><td class="platform">AWS Bedrock Agents</td><td class="score">55/85</td><td>Amazon Web Services</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">8</td><td class="platform">Activepieces</td><td class="score">52/85</td><td>Independent (YC)</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">9</td><td class="platform">LangChain</td><td class="score">49/85</td><td>Independent (Sequoia)</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">10</td><td class="platform">Zapier</td><td class="score">48/85</td><td>Independent</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">11</td><td class="platform">Dify</td><td class="score">46/85</td><td>Independent (CN VC)</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">12</td><td class="platform">Make.com</td><td class="score">46/85</td><td>Independent (Celonis)</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">13</td><td class="platform">Semantic Kernel</td><td class="score">46/85</td><td>Microsoft Research</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">14</td><td class="platform">Botpress</td><td class="score">45/85</td><td>Independent</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">15</td><td class="platform">CrewAI</td><td class="score">44/85</td><td>Independent (Andrew Ng)</td><td class="kev-none">&mdash;</td></tr>
+        <tr><td class="rank">16</td><td class="platform">LlamaIndex</td><td class="score">41/85</td><td>Independent (Norwest)</td><td class="kev-none">&mdash;</td></tr>
+        <tr class="row-kev"><td class="rank">17</td><td class="platform">Coze</td><td class="score">35/85</td><td>ByteDance</td><td class="kev-none">&mdash;</td></tr>
+        <tr class="row-kev"><td class="rank">18</td><td class="platform">n8n</td><td class="score">35/85</td><td>Independent (Berlin)</td><td class="kev">CVE-2025-68613</td></tr>
+        <tr><td class="rank">19</td><td class="platform">Flowise</td><td class="score">33/85</td><td>Workday (acquired)</td><td class="kev-none">&mdash;</td></tr>
+        <tr class="row-kev"><td class="rank">20</td><td class="platform">Langflow</td><td class="score">30/85</td><td>IBM (acquired)</td><td class="kev">CVE-2025-3248</td></tr>
+      </tbody>
+    </table>
+    <div class="table-caption">Table 1: VERDICT Index Q1 2026. Layer 0 scores. Maximum: 85 points. Highlighted rows: CISA KEV listed.</div>
+
+    <h3>Score Distribution</h3>
+    <p>Big Tech and enterprise-acquired platforms occupy the top seven positions, scoring 55 to 65. This includes Google, Microsoft (two entries), OpenAI, Salesforce, Amazon, and Workday (via Pipedream acquisition). Independent platforms cluster between 41 and 52. Platforms with severe incident histories or structural concerns score 35 and below.</p>
+    <p>The stratification is driven by two factors: breadth of compliance certifications (which large organizations can afford to obtain and maintain) and volume of publicly documented security architecture. This does not indicate that higher-ranked platforms are free from critical vulnerabilities. Vertex AI, Copilot Studio, and Agentforce all disclosed critical CVEs during the evaluation window.</p>
+    <p>The widest single-platform gap in the index: Vertex AI (65) to Langflow (30) &mdash; a 35-point spread across platforms that serve overlapping market segments.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 03 BADGES -->
+  <div class="section" id="badges">
+    <div class="section-num">03</div>
+    <h2>Key Finding: Compliance Badges Do Not Predict Security Posture</h2>
+    <p>On March 24, 2026, malicious code began executing in production environments around the world. The source: LiteLLM versions 1.82.7 and 1.82.8, distributed through PyPI. Within three hours, the compromised packages had been downloaded 47,000 times.</p>
+    <p>LiteLLM held both SOC 2 and ISO 27001 certifications, issued through Delve, a compliance automation provider. The threat actor group TeamPCP, linked to LAPSUS$, did not need to bypass either certification. The attack exploited a supply chain vector that compliance audits do not examine.</p>
+    <p>The downstream exposure was severe. According to public PyPI dependency data, 2,337 packages depend on LiteLLM. 88% use unpinned version specifications, meaning they automatically pulled the compromised release. Wiz reported LiteLLM present in 36% of all cloud environments they monitor. Among platforms in this index, CrewAI and tools within the LangChain ecosystem list LiteLLM as a direct dependency.</p>
+
+    <h3>This Was Not an Isolated Case</h3>
+    <p>Zapier disclosed two security incidents within the evaluation window: a repository breach in March 2025 and a supply chain compromise of its npm SDK in November 2025 affecting 425 packages. Zapier holds SOC 2 and maintains a HackerOne program. Its incident disclosure &mdash; immediate, detailed, and directed to all affected users &mdash; was the strongest in the index. But the incidents occurred regardless.</p>
+    <p>Certifications attest to the existence of security processes at a point in time. They do not prevent attacks through vectors those processes were not designed to cover. Procurement decisions that weight certification status as a primary trust signal may be mispricing actual risk.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 04 SUPPLY CHAIN -->
+  <div class="section" id="supply-chain">
+    <div class="section-num">04</div>
+    <h2>Supply Chain: The Emerging Attack Surface</h2>
+    <p>The March 2026 attack chain was methodical. The threat actor compromised a security scanner first (Trivy, March 19), then a compliance tool (Checkmarx KICS, March 23), then an AI infrastructure library (LiteLLM, March 24). Each step exploited trust. The tools designed to detect compromises were themselves compromised.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Date</th><th>Target</th><th>Vector</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td>Mar 24</td><td class="dim-bold">LiteLLM (PyPI)</td><td>Compromised package</td><td>47,000 downloads in 3 hours</td></tr>
+        <tr><td>Mar 23</td><td class="dim-bold">Checkmarx KICS</td><td>Compromised package</td><td>Security tool as attack vector</td></tr>
+        <tr><td>Mar 19</td><td class="dim-bold">Trivy Plugin</td><td>Compromised package</td><td>Security scanner backdoored</td></tr>
+        <tr><td>Nov 2025</td><td class="dim-bold">Zapier npm SDK</td><td>Supply chain</td><td>425 packages affected</td></tr>
+      </tbody>
+    </table>
+    <div class="table-caption">Table 2: Supply chain incidents affecting AI agent platform ecosystems, Q1 2026.</div>
+
+    <p>These incidents are not occurring in a regulatory vacuum. In January 2026, NIST's Center for AI Standards and Innovation issued a Request for Information on AI agent security evaluation methodologies, receiving 932 public comments before the March deadline. The federal government is actively seeking frameworks for assessing exactly the kind of risk this report documents.</p>
+    <p>Security teams assessing AI agent platforms cannot stop at the platform boundary. The dependency tree is the actual attack surface. A platform with zero CVEs can inherit critical risk from a single compromised upstream library.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 05 SANDBOX -->
+  <div class="section" id="sandbox">
+    <div class="section-num">05</div>
+    <h2>Architecture Divergence: Sandbox Design as a Trust Signal</h2>
+    <p>Sandbox architecture is the most consequential design decision a platform makes, and the widest point of divergence across the 20 platforms in this index.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Architecture</th><th>Platforms</th><th>Risk Profile</th></tr></thead>
+      <tbody>
+        <tr><td class="dim-bold">VM Isolation</td><td>Pipedream, AWS Bedrock</td><td>Strongest. Escape requires hypervisor vulnerability.</td></tr>
+        <tr><td class="dim-bold">Container Isolation</td><td>Vertex AI, Copilot Studio</td><td>Strong. Container escapes rare but documented.</td></tr>
+        <tr><td class="dim-bold">Pyodide/WASM</td><td>n8n (v2.0+)</td><td>Moderate. New approach, limited adversarial testing.</td></tr>
+        <tr><td class="dim-bold">Blocklist Sandbox</td><td>n8n (pre-2.0), Dify</td><td>Weak. 5+ bypass CVEs confirmed for n8n alone.</td></tr>
+        <tr><td class="dim-bold">No Documented Sandbox</td><td>Semantic Kernel, Flowise, Botpress</td><td>Highest risk. Plugins execute in-process.</td></tr>
+      </tbody>
+    </table>
+    <div class="table-caption">Table 3: Sandbox architecture spectrum across evaluated platforms.</div>
+
+    <p>n8n disclosed 12+ CVEs over the trailing twelve months, including two at CVSS 9.9 or above. Five or more were sandbox bypass vulnerabilities in the same blocklist-based architecture &mdash; a structural pattern, not isolated bugs. The migration to Pyodide in v2.0 is an architectural acknowledgment of this limitation.</p>
+    <p>Pipedream's VM isolation has produced zero public CVEs. Its Workday acquisition raises roadmap questions, but the security architecture stands on its own. The correlation between sandbox quality and CVE count is the clearest signal in this dataset.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 06 CISA KEV -->
+  <div class="section" id="cisa-kev">
+    <div class="section-num">06</div>
+    <h2>CISA KEV: What Active Exploitation Means for Enterprise</h2>
+    <p>Inclusion in the CISA Known Exploited Vulnerabilities catalog means a vulnerability has been confirmed as actively exploited in the wild. Two platforms in this index carry that designation.</p>
+
+    <h3>n8n &mdash; CVE-2025-68613</h3>
+    <p>CVSS 9.9. Added to CISA KEV March 2026. FCEB patch deadline: March 25, 2026. Allows authenticated users to execute arbitrary code with n8n process privileges. Censys identified over 100,000 potentially vulnerable instances at disclosure.</p>
+
+    <h3>Langflow &mdash; CVE-2025-3248</h3>
+    <p>CVSS 9.8. Added to CISA KEV May 2025. The Flodrix botnet exploited this across an estimated 1,000+ instances. Approximately 12 months elapsed between initial disclosure and KEV listing. Langflow changed ownership three times during this window (Logspace, DataStax, IBM), raising questions about vulnerability response continuity during acquisition transitions.</p>
+
+    <p>Federal agencies subject to Binding Operational Directive 22-01 must remediate KEV-listed vulnerabilities within specified deadlines. For private sector teams, KEV listing is among the strongest available signals that a vulnerability is being actively targeted.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 07 DIMENSION ANALYSIS -->
+  <div class="section" id="dimensions">
+    <div class="section-num">07</div>
+    <h2>Dimension Analysis</h2>
+    <p>VERDICT scores six active dimensions in Layer 0. Analyzing averages across all 20 platforms reveals where the industry invests &mdash; and where it does not.</p>
+
+    <table class="data-table">
+      <thead><tr><th>Dimension</th><th>Max</th><th>Avg</th><th>Range</th><th>Observation</th></tr></thead>
+      <tbody>
+        <tr><td class="dim-bold">V &mdash; Verifiability</td><td class="score">20</td><td class="score">12.9</td><td class="score">8&ndash;18</td><td>Highest average. OSS platforms and Big Tech both document well.</td></tr>
+        <tr><td class="dim-bold">R &mdash; Resilience</td><td class="score">20</td><td class="score">11.5</td><td class="score">4&ndash;20</td><td>Most discriminating. Flowise (4) to AutoGen (20). Widest spread.</td></tr>
+        <tr><td class="dim-bold">D &mdash; Data Conduct</td><td class="score">15</td><td class="score">7.9</td><td class="score">3&ndash;13</td><td>AI training policies remain unclear at multiple platforms.</td></tr>
+        <tr><td class="dim-bold">I &mdash; Identity/Control</td><td class="score">10</td><td class="score">5.2</td><td class="score">3&ndash;8</td><td>Kill switches and HITL undocumented at several platforms.</td></tr>
+        <tr><td class="dim-bold">C &mdash; Containment</td><td class="score">10</td><td class="score">4.9</td><td class="score">2&ndash;8</td><td>Lowest avg relative to max. Industry's weakest area.</td></tr>
+        <tr><td class="dim-bold">T &mdash; Transparency</td><td class="score">10</td><td class="score">5.7</td><td class="score">2&ndash;9</td><td>Big Tech leads in disclosure. Indie platforms lag.</td></tr>
+      </tbody>
+    </table>
+    <div class="table-caption">Table 4: Dimension averages across 20 platforms. All values verified from scored data.</div>
+
+    <p>Containment (C) at 4.9/10 is the industry's structural weakness. Platforms have invested in compliance documentation (V) and data governance (D) &mdash; the dimensions procurement teams ask about &mdash; but underinvested in runtime isolation that limits blast radius when exploitation succeeds.</p>
+    <p>Resilience (R) with its 4-to-20 range is the most effective single dimension for platform differentiation. AutoGen's 20/20 reflects zero CVEs combined with MSRC's formal coverage commitment (December 2025). Flowise's 4/20 reflects six CVEs in a single March 2026 cluster, including two at CVSS 9.8.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 08 METHODOLOGY -->
+  <div class="section" id="methodology">
+    <div class="section-num">08</div>
+    <h2>Methodology: Framework v0.3.1</h2>
+    <p>VERDICT Framework v0.3.1 evaluates platforms across seven dimensions, with a maximum Layer 0 score of 85. E (Effectiveness) requires behavioral testing and is excluded from current evaluations.</p>
+
+    <h3>Data Sources</h3>
+    <p>CVE databases (NVD, MITRE), CISA KEV catalog, GitHub Security Advisories, official Terms of Service, privacy policies, security documentation, compliance certifications, and community-reported incidents. No vendor account, free trial, or internal access is used.</p>
+
+    <h3>Scoring Principles</h3>
+    <p>Silence is scored. If a vendor does not document a capability, that absence is recorded as zero. An undocumented data retention policy and a confirmed absence of one receive the same score. Procurement teams cannot rely on capabilities that are not publicly verifiable.</p>
+
+    <h3>Evaluation Layers</h3>
+    <p><strong>Layer 0 &mdash; Public Documentation:</strong> All publicly available information. This report uses Layer 0 exclusively.</p>
+    <p><strong>Layer 1 &mdash; Behavioral Testing:</strong> Free tier. 30 executions per scenario, 95% confidence. Not yet active.</p>
+    <p><strong>Layer C &mdash; Live Monitoring:</strong> Continuous. New CVEs trigger immediate score updates. Active for all platforms.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 09 BIAS DISCLOSURE -->
+  <div class="section" id="bias">
+    <div class="section-num">09</div>
+    <h2>Bias Disclosure and Limitations</h2>
+    <p>VERDICT's evaluation tooling uses Claude, developed by Anthropic. Anthropic competes with several evaluated vendors, including OpenAI and Google. This dependency is disclosed explicitly. Mitigations: all scoring criteria are predetermined in Framework v0.3.1; all data sources are public and verifiable; results are reviewed for consistency before publication.</p>
+    <p>Layer 0 is limited to public documentation. Strong security practices that are not publicly documented will not be reflected in scores. This is by design: undocumented security is operationally invisible to prospective customers.</p>
+    <p>This report does not constitute security advice, legal guidance, or product recommendation. Vendors are invited to submit factual corrections with supporting public documentation to vendor@getverdict.fyi.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 10 Q2 OUTLOOK -->
+  <div class="section" id="outlook">
+    <div class="section-num">10</div>
+    <h2>Q2 2026 Outlook</h2>
+    <p>Three developments will shape the AI agent security landscape in Q2 2026:</p>
+    <p><strong>Microsoft Zero Trust Assessment for AI.</strong> Announced March 2026, scheduled for summer release. This will be the first major vendor-provided self-assessment tool specifically for AI agent deployments. VERDICT will evaluate whether it addresses the structural gaps identified in this report &mdash; particularly supply chain and sandbox architecture.</p>
+    <p><strong>NIST AI Agent Security Guidelines.</strong> NIST CAISI received 932 public submissions to its RFI on AI agent security evaluation methodologies. This input may inform forthcoming guidance on how organizations assess agent platform risk. VERDICT's framework and dataset are available as reference material for this process.</p>
+    <p><strong>VERDICT Layer 1 Activation.</strong> Q2 will mark the beginning of behavioral testing for platforms offering free tiers. The E (Effectiveness) dimension, currently excluded, will produce the first statistically validated performance data across platforms &mdash; 30 runs per scenario, 95% confidence intervals.</p>
+    <p>The next edition of this report, VERDICT-RPT-2026-Q2, is scheduled for publication in July 2026.</p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- 11 ABOUT -->
+  <div class="section" id="about">
+    <div class="section-num">11</div>
+    <h2>About VERDICT</h2>
+    <p>VERDICT is an independent evaluation index for AI agent and workflow automation platforms, operated by ZinovaCreation (Japan). Zero vendor revenue. No paid certifications. No evaluation drafts shared with vendors prior to publication.</p>
+    <p>Individual platform evaluations, methodology documentation, and live score updates are available at <a href="/">getverdict.fyi</a>.</p>
+
+    <table class="contact-table">
+      <tr><th>Website</th><td><a href="/">getverdict.fyi</a></td></tr>
+      <tr><th>Press</th><td>press@getverdict.fyi</td></tr>
+      <tr><th>Vendor Corrections</th><td>vendor@getverdict.fyi</td></tr>
+      <tr><th>Subscribe</th><td><a href="https://getverdict.beehiiv.com">getverdict.beehiiv.com</a></td></tr>
+      <tr><th>Report ID</th><td>VERDICT-RPT-2026-Q1-001</td></tr>
+    </table>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <p>Get notified when the Q2 report is published, or when any platform's score changes.</p>
+    <div class="cta-row">
+      <a href="/" class="cta-link">View All 20 Evaluations</a>
+      <a href="/#subscribe" class="cta-link">Subscribe for Updates</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-note">
+    &copy; 2026 ZinovaCreation. This report may be freely distributed in its complete, unmodified form with attribution to VERDICT (<a href="/">getverdict.fyi</a>). Excerpts permitted with attribution. Commercial redistribution requires written permission.
+  </div>
+</footer>
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4dbc22ec4e18434e9bdbc01d644490c0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
