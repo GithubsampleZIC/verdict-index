@@ -112,4 +112,14 @@
     <lastmod>2026-03-29</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://getverdict.fyi/watsonx-orchestrate/</loc>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/haystack/</loc>
+    <lastmod>2026-03-30</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>
