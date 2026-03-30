@@ -58,6 +58,16 @@ nav a:hover{color:var(--navy);}
 .subscribe-btn:hover{background:var(--navy-light);}
 .subscribe-note{font-family:var(--sans);font-size:.8rem;color:var(--caption);}
 
+/* REPORT BANNER */
+.report-banner{max-width:1200px;margin:0 auto;padding:2.5rem 3rem;}
+.report-banner-inner{border:1px solid var(--divider);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;transition:border-color .2s;}
+.report-banner-inner:hover{border-color:rgba(27,42,74,0.2);}
+.report-banner-label{font-family:var(--mono);font-size:.8rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem;}
+.report-banner-title{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--heading);margin-bottom:.3rem;}
+.report-banner-desc{font-family:var(--sans);font-size:.85rem;color:var(--caption);line-height:1.6;}
+.report-banner-link{font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--white);background:var(--navy);padding:.6rem 1.5rem;text-decoration:none;white-space:nowrap;transition:background .2s;flex-shrink:0;}
+.report-banner-link:hover{background:var(--navy-light);text-decoration:none;}
+
 /* SECTIONS */
 .section-wrap{padding:5rem 3rem;max-width:1200px;margin:0 auto;}
 .section-label{font-family:var(--mono);font-size:.8rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem;}
@@ -166,6 +176,8 @@ footer{border-top:1px solid var(--divider);padding:3rem;max-width:1200px;margin:
   .hero-stats{flex-wrap:wrap;}
   .stat-item{border-right:none;padding-right:2rem;}
   .subscribe-bar{flex-direction:column;gap:1rem;padding:2rem 1.5rem;}
+  .report-banner{padding:1.5rem;}
+  .report-banner-inner{flex-direction:column;text-align:center;padding:1.5rem;}
 }
 </style>
 
@@ -180,6 +192,7 @@ footer{border-top:1px solid var(--divider);padding:3rem;max-width:1200px;margin:
   </div>
   <nav>
     <a href="#evaluations">Evaluations</a>
+    <a href="/report/q1-2026/">Q1 Report</a>
     <a href="#methodology">Methodology</a>
     <a href="#about">About</a>
     <a href="#evaluations" class="nav-cta">View Index</a>
@@ -205,6 +218,18 @@ footer{border-top:1px solid var(--divider);padding:3rem;max-width:1200px;margin:
   <div class="subscribe-form">
     <input type="email" id="subscribe-email" class="subscribe-input" placeholder="your@email.com" onkeydown="if(event.key==='Enter')window.open('https://getverdict.beehiiv.com/subscribe?email='+encodeURIComponent(this.value),'_blank')">
     <button class="subscribe-btn" onclick="var e=document.getElementById('subscribe-email').value;if(e)window.open('https://getverdict.beehiiv.com/subscribe?email='+encodeURIComponent(e),'_blank');else window.open('https://getverdict.beehiiv.com/subscribe','_blank')">Subscribe</button>
+  </div>
+</div>
+
+<!-- Q1 REPORT BANNER -->
+<div class="report-banner">
+  <div class="report-banner-inner">
+    <div>
+      <div class="report-banner-label">Quarterly Report</div>
+      <div class="report-banner-title">The State of AI Agent Security — Q1 2026</div>
+      <div class="report-banner-desc">20 platforms. Scores 30–65 out of 85. Two on CISA KEV. Compliance badges did not predict security posture.</div>
+    </div>
+    <a href="/report/q1-2026/" class="report-banner-link">Read Report</a>
   </div>
 </div>
 
