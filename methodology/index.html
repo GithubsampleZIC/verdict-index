@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — VERDICT Framework v0.3.1</title>
+<meta name="description" content="VERDICT Framework v0.3.1: 7 scoring dimensions, 85-point scale, public data only. How AI agent platforms are evaluated for security, privacy, and compliance.">
+<meta property="og:title" content="Methodology — VERDICT Framework v0.3.1">
+<meta property="og:description" content="How VERDICT evaluates AI agent platforms. 7 dimensions, 85-point Layer 0 scale, public data only. Scoring rules, vendor corrections, and bias disclosures.">
+<meta property="og:url" content="https://getverdict.fyi/methodology/">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://getverdict.fyi/methodology/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--white:#FFFFFF;--ice:#F5F6F8;--navy:#1B2A4A;--navy-light:#2A3D66;--heading:#1A1A2E;--body:#4A5060;--caption:#6B7280;--risk:#C4332B;--risk-bg:rgba(196,51,43,0.06);--caution:#C08520;--caution-bg:rgba(192,133,32,0.06);--safe:#2D7A4F;--divider:#E2E5EB;--serif:'Source Serif 4',Georgia,serif;--sans:'Libre Franklin',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;--score:'Merriweather',Georgia,serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--white);color:var(--body);font-family:var(--sans);font-weight:400;line-height:1.7;}
+a{color:var(--navy);text-decoration:none;}a:hover{text-decoration:underline;}
+header{padding:0 2.5rem;height:58px;display:flex;align-items:center;justify-content:space-between;background:var(--white);border-bottom:1px solid var(--divider);}
+.logo{display:flex;align-items:baseline;gap:.75rem;text-decoration:none;}.logo:hover{text-decoration:none;}
+.logo-mark{font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:.1em;color:var(--navy);}
+.logo-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--caption);text-transform:uppercase;}
+.back{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--caption);text-decoration:none;}.back:hover{color:var(--navy);}
+.wrap{max-width:720px;margin:0 auto;padding:4rem 2.5rem;}
+.breadcrumb{font-family:var(--mono);font-size:.65rem;color:var(--caption);margin-bottom:2rem;}.breadcrumb a{color:var(--caption);}.breadcrumb a:hover{color:var(--navy);}
+h1{font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);font-weight:700;line-height:1.15;color:var(--heading);margin-bottom:1.5rem;}
+h2{font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--heading);margin-top:3rem;margin-bottom:1rem;padding-top:2rem;border-top:1px solid var(--divider);}
+h2:first-of-type{border-top:none;padding-top:0;margin-top:2rem;}
+h3{font-family:var(--sans);font-size:.95rem;font-weight:600;color:var(--heading);margin-top:1.5rem;margin-bottom:.5rem;}
+p{margin-bottom:1.2rem;font-size:.92rem;}
+.lead{font-size:1.05rem;color:var(--heading);line-height:1.8;margin-bottom:2rem;}
+.dim-card{background:var(--ice);padding:1.2rem 1.5rem;margin-bottom:1rem;border-left:3px solid var(--navy);}
+.dim-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.4rem;}
+.dim-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--heading);}
+.dim-max{font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--navy);}
+.dim-desc{font-size:.82rem;color:var(--body);line-height:1.7;}
+.dim-inactive{border-left-color:var(--divider);opacity:.7;}
+.layer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0;}
+.layer-box{padding:1.2rem;border:1px solid var(--divider);}
+.layer-name{font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--navy);margin-bottom:.3rem;}
+.layer-status{font-family:var(--mono);font-size:.6rem;color:var(--caption);margin-bottom:.5rem;}
+.layer-desc{font-size:.82rem;color:var(--body);line-height:1.6;}
+.rule{padding:.7rem 1rem;margin-bottom:.5rem;font-size:.82rem;line-height:1.7;background:var(--ice);}
+.rule-label{font-family:var(--mono);font-size:.65rem;font-weight:600;color:var(--navy);display:block;margin-bottom:.2rem;}
+.process-step{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.2rem;}
+.step-num{font-family:var(--score);font-weight:900;font-size:1.5rem;color:var(--navy);line-height:1;min-width:30px;}
+.step-text{font-size:.85rem;color:var(--body);line-height:1.7;}
+.step-text strong{color:var(--heading);}
+.cta-bar{border-top:1px solid var(--divider);padding-top:2.5rem;margin-top:3rem;display:flex;gap:2rem;flex-wrap:wrap;}
+.cta-link{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--navy);padding:.5rem 1rem;border:1px solid var(--divider);text-decoration:none;transition:all .2s;}.cta-link:hover{background:var(--navy);color:var(--white);border-color:var(--navy);text-decoration:none;}
+footer{border-top:1px solid var(--divider);padding:2rem 2.5rem;max-width:720px;margin:0 auto;}
+.footer-note{font-family:var(--mono);font-size:.62rem;color:var(--caption);line-height:1.8;}.footer-note a{color:var(--navy);}
+@media(max-width:600px){.layer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo"><span class="logo-mark">VERDICT</span><span class="logo-sub">AI Agent Trust Index</span></a>
+  <a href="/" class="back">&larr; All Evaluations</a>
+</header>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Methodology</div>
+
+  <h1>Methodology</h1>
+
+  <p class="lead">VERDICT Framework v0.3.1 evaluates AI agent platforms across seven dimensions on an 85-point scale using public data only. This page documents the scoring system, evaluation layers, rules, and vendor correction process.</p>
+
+  <h2>Scoring Dimensions</h2>
+
+  <p>Each platform is scored across seven dimensions. The acronym V-E-R-D-I-C-T maps to the evaluation areas. Layer 0 (public documentation only) has a maximum of 85 points because the Effectiveness dimension requires behavioral testing (Layer 1).</p>
+
+  <div class="dim-card">
+    <div class="dim-header"><span class="dim-name">V &mdash; Verifiability</span><span class="dim-max">20 pts</span></div>
+    <div class="dim-desc">Can the platform's security claims be independently verified? Covers developer identity, source code disclosure, version management, dependency transparency, independent certifications, and documentation quality.</div>
+  </div>
+
+  <div class="dim-card dim-inactive">
+    <div class="dim-header"><span class="dim-name">E &mdash; Effectiveness</span><span class="dim-max">15 pts &middot; Layer 1</span></div>
+    <div class="dim-desc">Does the platform perform securely under real-world conditions? Requires behavioral testing (30 runs across 4 difficulty levels). Excluded from Layer 0 evaluations. Planned for Q2 2026.</div>
+  </div>
+
+  <div class="dim-card">
+    <div class="dim-header"><span class="dim-name">R &mdash; Resilience</span><span class="dim-max">20 pts</span></div>
+    <div class="dim-desc">How does the platform handle vulnerabilities? Covers CVE count (trailing 12 months), maximum CVSS severity, patch response speed, recurring structural issues, and supply chain compromise history. A CVSS 9.0+ penalty applies.</div>
+  </div>
+
+  <div class="dim-card">
+    <div class="dim-header"><span class="dim-name">D &mdash; Data Conduct</span><span class="dim-max">15 pts</span></div>
+    <div class="dim-desc">How is user data handled? Covers GDPR compliance, data minimization (telemetry posture), AI model training policy, sub-processor transparency, and data retention disclosure.</div>
+  </div>
+
+  <div class="dim-card">
+    <div class="dim-header"><span class="dim-name">I &mdash; Identity &amp; Control</span><span class="dim-max">10 pts</span></div>
+    <div class="dim-desc">Can humans maintain control over the AI agent? Covers emergency stop mechanisms, human-in-the-loop design, and permission delegation chain transparency (auth, RBAC, audit logging).</div>
+  </div>
+
+  <div class="dim-card">
+    <div class="dim-header"><span class="dim-name">C &mdash; Containment</span><span class="dim-max">10 pts</span></div>
+    <div class="dim-desc">Are agent actions bounded? Covers sandbox design philosophy, least privilege enforcement, and tenant isolation. The weakest average dimension in the index (4.9/10 across Q1 platforms).</div>
+  </div>
+
+  <div class="dim-card">
+    <div class="dim-header"><span class="dim-name">T &mdash; Transparency</span><span class="dim-max">10 pts</span></div>
+    <div class="dim-desc">Does the platform openly communicate its security posture? Covers CVE publication posture, incident disclosure speed, security policy publication, AI safety framework adoption, and AI system identity disclosure.</div>
+  </div>
+
+  <h2>Evaluation Layers</h2>
+
+  <div class="layer-grid">
+    <div class="layer-box">
+      <div class="layer-name">Layer 0</div>
+      <div class="layer-status">Active &middot; 85 pts max</div>
+      <div class="layer-desc">Public documentation only. CVE databases (NVD, MITRE), CISA KEV catalog, GitHub Security Advisories, official documentation, Terms of Service, privacy policies, and compliance certifications. No vendor accounts or internal access. Zero cost.</div>
+    </div>
+    <div class="layer-box">
+      <div class="layer-name">Layer 1</div>
+      <div class="layer-status">Planned &middot; Q2 2026</div>
+      <div class="layer-desc">Behavioral testing on free tiers or self-hosted deployments. 30 runs across 4 difficulty levels per platform. Adds the Effectiveness (E) dimension, bringing the maximum to 100 points.</div>
+    </div>
+    <div class="layer-box">
+      <div class="layer-name">Layer C</div>
+      <div class="layer-status">Planned &middot; Continuous</div>
+      <div class="layer-desc">Live CVE monitoring and compliance update tracking. Triggers re-evaluation when new vulnerabilities or certification changes are detected.</div>
+    </div>
+  </div>
+
+  <h2>Scoring Rules</h2>
+
+  <div class="rule"><span class="rule-label">Silence = Data Point</span>If a platform does not publicly document a security control, it is scored as absent (zero). The absence of documentation is itself informative.</div>
+
+  <div class="rule"><span class="rule-label">No Intent Attribution</span>Evaluations never attribute motives to vendors. "No vulnerability disclosure program was identified" — not "the vendor chose not to publish one."</div>
+
+  <div class="rule"><span class="rule-label">Cite Every Claim</span>Every factual statement references a public source: CVE numbers, official documentation URLs, compliance certification pages, or advisory databases.</div>
+
+  <div class="rule"><span class="rule-label">Include Positive Findings</span>Every evaluation records strengths alongside concerns. VERDICT is a witness, not a prosecution.</div>
+
+  <div class="rule"><span class="rule-label">Risk Factors, Not Pass/Fail</span>Scores record risk factors by use case (internal testing, credential workflows, multi-tenant, regulated data). No platform is "recommended" or "not recommended."</div>
+
+  <div class="rule"><span class="rule-label">CISA KEV Flag</span>Platforms with entries in the CISA Known Exploited Vulnerabilities catalog are flagged. This is a factual marker, not a scoring penalty beyond the CVE's existing impact on the R dimension.</div>
+
+  <div class="rule"><span class="rule-label">Tiebreaking</span>Equal scores are sorted alphabetically by platform name.</div>
+
+  <div class="rule"><span class="rule-label">Bias Disclosure</span>Every evaluation includes a bias disclosure statement identifying VERDICT's use of Claude (Anthropic) as tooling and any known commercial relationships between Anthropic and the evaluated vendor.</div>
+
+  <h2>Evaluation Process</h2>
+
+  <div class="process-step"><span class="step-num">1</span><div class="step-text"><strong>Research.</strong> Public data is collected from CVE databases, official documentation, GitHub repositories, compliance certification pages, and privacy policies. No vendor accounts are created.</div></div>
+
+  <div class="process-step"><span class="step-num">2</span><div class="step-text"><strong>Score.</strong> Each dimension is scored against documented criteria. Dimension totals are summed to produce the overall score. The evaluation undergoes a 3-pass quality review (factual accuracy, legal risk, audience perception).</div></div>
+
+  <div class="process-step"><span class="step-num">3</span><div class="step-text"><strong>Publish.</strong> The evaluation page goes live on getverdict.fyi with dimension breakdowns, radar charts, incident timelines, and bias disclosures.</div></div>
+
+  <div class="process-step"><span class="step-num">4</span><div class="step-text"><strong>Notify.</strong> The vendor receives a post-publication email summarizing key findings and inviting factual corrections with supporting public documentation. No response is required.</div></div>
+
+  <div class="process-step"><span class="step-num">5</span><div class="step-text"><strong>Correct.</strong> If a vendor provides verifiable factual corrections, the score is updated promptly. The correction is documented in the evaluation record. To date, one score correction has been applied through this process (Dust: 55&rarr;57, Transparency dimension updated after vendor confirmed the existence of a VDP, SECURITY.md, and security.txt).</div></div>
+
+  <h2>What VERDICT Is Not</h2>
+
+  <p>VERDICT is not a certification authority. A VERDICT score does not constitute a security certification, endorsement, or guarantee. Scores reflect the state of publicly available documentation at the time of evaluation. Platforms may have security controls that are not publicly documented and therefore not captured by Layer 0.</p>
+
+  <p>VERDICT does not conduct penetration testing, access vendor infrastructure, or use vendor accounts at Layer 0. Behavioral testing (Layer 1) is planned for Q2 2026 and will use only free tiers or self-hosted deployments.</p>
+
+  <div class="cta-bar">
+    <a href="/" class="cta-link">View All 36 Evaluations</a>
+    <a href="/about/" class="cta-link">About VERDICT</a>
+    <a href="/report/q1-2026/" class="cta-link">Q1 2026 Report</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-note">
+    VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>
+    VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a>
+  </div>
+</footer>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4dbc22ec4e18434e9bdbc01d644490c0"}'></script>
+</body>
+</html>
