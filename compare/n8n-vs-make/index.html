@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>n8n vs Make.com Security Comparison — VERDICT</title>
+<meta name="description" content="Independent security comparison of n8n (35/85) vs Make.com (46/85). n8n has a CISA KEV entry and 12+ CVEs. Make.com has zero CVEs. Both score identically on containment. VERDICT Framework v0.3.1.">
+<meta property="og:title" content="n8n vs Make.com Security Comparison — VERDICT">
+<meta property="og:description" content="n8n scores 35/85 with a CISA KEV listing. Make.com scores 46/85 with zero CVEs. The 11-point gap is driven almost entirely by one dimension.">
+<meta property="og:url" content="https://getverdict.fyi/compare/n8n-vs-make/">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://getverdict.fyi/compare/n8n-vs-make/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--white:#FFFFFF;--ice:#F5F6F8;--navy:#1B2A4A;--navy-light:#2A3D66;--heading:#1A1A2E;--body:#4A5060;--caption:#6B7280;--risk:#C4332B;--risk-bg:rgba(196,51,43,0.06);--caution:#C08520;--caution-bg:rgba(192,133,32,0.06);--safe:#2D7A4F;--safe-bg:rgba(45,122,79,0.06);--divider:#E2E5EB;--serif:'Source Serif 4',Georgia,serif;--sans:'Libre Franklin',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;--score:'Merriweather',Georgia,serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--white);color:var(--body);font-family:var(--sans);font-weight:400;line-height:1.7;}
+a{color:var(--navy);text-decoration:none;}a:hover{text-decoration:underline;}
+header{padding:0 2.5rem;height:58px;display:flex;align-items:center;justify-content:space-between;background:var(--white);border-bottom:1px solid var(--divider);}
+.logo{display:flex;align-items:baseline;gap:.75rem;text-decoration:none;}.logo:hover{text-decoration:none;}
+.logo-mark{font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:.1em;color:var(--navy);}
+.logo-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--caption);text-transform:uppercase;}
+.back{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--caption);text-decoration:none;}.back:hover{color:var(--navy);}
+.wrap{max-width:800px;margin:0 auto;padding:4rem 2.5rem;}
+.breadcrumb{font-family:var(--mono);font-size:.65rem;color:var(--caption);margin-bottom:2rem;}.breadcrumb a{color:var(--caption);}.breadcrumb a:hover{color:var(--navy);}
+h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.15;color:var(--heading);margin-bottom:.5rem;}
+.subtitle{font-family:var(--mono);font-size:.7rem;color:var(--caption);margin-bottom:2rem;}
+h2{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--heading);margin-top:2.5rem;margin-bottom:1rem;padding-top:2rem;border-top:1px solid var(--divider);}
+h2:first-of-type{border-top:none;padding-top:0;margin-top:2rem;}
+p{margin-bottom:1.2rem;font-size:.92rem;}
+.lead{font-size:1rem;color:var(--heading);line-height:1.8;margin-bottom:2rem;}
+
+/* Score comparison hero */
+.score-vs{display:flex;align-items:center;justify-content:center;gap:2rem;padding:2rem 0;margin-bottom:2rem;border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);}
+.score-side{text-align:center;flex:1;}
+.score-platform{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--heading);margin-bottom:.3rem;}
+.score-num{font-family:var(--score);font-weight:900;font-size:3rem;line-height:1;color:var(--navy);}
+.score-denom{font-family:var(--mono);font-size:1rem;color:var(--caption);}
+.score-rank{font-family:var(--mono);font-size:.6rem;color:var(--caption);margin-top:.3rem;}
+.score-vs-divider{font-family:var(--serif);font-size:1.5rem;color:var(--divider);font-weight:300;}
+.kev-flag{display:inline-block;font-family:var(--mono);font-size:.6rem;color:var(--risk);background:var(--risk-bg);padding:.15rem .5rem;margin-top:.4rem;}
+
+/* Dimension comparison table */
+.dim-table{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+.dim-table th{font-family:var(--mono);font-size:.65rem;color:var(--caption);text-transform:uppercase;letter-spacing:.1em;text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--navy);background:var(--ice);}
+.dim-table th.col-score{text-align:center;width:70px;}
+.dim-table th.col-diff{text-align:center;width:60px;}
+.dim-table td{font-size:.85rem;padding:.7rem .8rem;border-bottom:1px solid var(--divider);}
+.dim-table td.dim-name{font-family:var(--mono);font-weight:600;color:var(--navy);font-size:.8rem;}
+.dim-table td.score-cell{text-align:center;font-family:var(--mono);font-weight:500;}
+.dim-table td.diff-cell{text-align:center;font-family:var(--mono);font-weight:600;font-size:.8rem;}
+.diff-pos{color:var(--safe);}
+.diff-neg{color:var(--risk);}
+.diff-zero{color:var(--caption);}
+.dim-table tr.highlight{background:var(--risk-bg);}
+
+/* Detail cards */
+.detail{background:var(--ice);padding:1.2rem 1.5rem;margin-bottom:1rem;border-left:3px solid var(--navy);}
+.detail-risk{border-left-color:var(--risk);}
+.detail-safe{border-left-color:var(--safe);}
+.detail-label{font-family:var(--mono);font-size:.65rem;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4rem;}
+.detail-risk .detail-label{color:var(--risk);}
+.detail-safe .detail-label{color:var(--safe);}
+.detail-text{font-size:.85rem;line-height:1.7;color:var(--body);}
+
+/* Callout */
+.callout{background:var(--ice);border-left:3px solid var(--navy);padding:1.2rem 1.5rem;margin:2rem 0;font-size:.9rem;line-height:1.75;color:var(--navy);}
+
+/* Tag */
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0;}
+.tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border:1px solid;}
+.tag-red{border-color:rgba(196,51,43,.3);color:var(--risk);background:var(--risk-bg);}
+.tag-green{border-color:rgba(45,122,79,.3);color:var(--safe);background:var(--safe-bg);}
+.tag-dim{border-color:var(--divider);color:var(--caption);background:var(--ice);}
+
+.cta-bar{border-top:1px solid var(--divider);padding-top:2.5rem;margin-top:3rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+.cta-link{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--navy);padding:.5rem 1rem;border:1px solid var(--divider);text-decoration:none;transition:all .2s;}.cta-link:hover{background:var(--navy);color:var(--white);border-color:var(--navy);text-decoration:none;}
+footer{border-top:1px solid var(--divider);padding:2rem 2.5rem;max-width:800px;margin:0 auto;}
+.footer-note{font-family:var(--mono);font-size:.62rem;color:var(--caption);line-height:1.8;}.footer-note a{color:var(--navy);}
+@media(max-width:600px){.score-vs{flex-direction:column;gap:1rem;}.dim-table{font-size:.8rem;}}
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo"><span class="logo-mark">VERDICT</span><span class="logo-sub">AI Agent Trust Index</span></a>
+  <a href="/" class="back">&larr; All Evaluations</a>
+</header>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Compare &rsaquo; n8n vs Make.com</div>
+
+  <h1>n8n vs Make.com: Security Comparison</h1>
+  <div class="subtitle">Framework v0.3.1 &middot; Layer 0 &middot; Updated April 2026</div>
+
+  <p class="lead">Both platforms automate workflows. Both connect to hundreds of third-party services. Their security postures are materially different. This comparison examines where the gap exists and what drives it.</p>
+
+  <div class="score-vs">
+    <div class="score-side">
+      <div class="score-platform">n8n</div>
+      <span class="score-num">35</span><span class="score-denom">&thinsp;/&thinsp;85</span>
+      <div class="score-rank">Rank #30 of 36</div>
+      <div class="kev-flag">CISA KEV Listed</div>
+    </div>
+    <div class="score-vs-divider">vs</div>
+    <div class="score-side">
+      <div class="score-platform">Make.com</div>
+      <span class="score-num">46</span><span class="score-denom">&thinsp;/&thinsp;85</span>
+      <div class="score-rank">Rank #18 of 36</div>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag tag-red">n8n: CISA KEV &middot; CVE-2025-68613</span>
+    <span class="tag tag-green">Make.com: 0 CVEs</span>
+    <span class="tag tag-dim">11-Point Gap</span>
+    <span class="tag tag-dim">Same C &middot; Same I &middot; Same D</span>
+  </div>
+
+  <h2>Dimension-by-Dimension Comparison</h2>
+
+  <table class="dim-table">
+    <thead>
+      <tr>
+        <th>Dimension</th>
+        <th class="col-score">n8n</th>
+        <th class="col-score">Make.com</th>
+        <th class="col-diff">Gap</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="dim-name">V &mdash; Verifiability</td>
+        <td class="score-cell">8/20</td>
+        <td class="score-cell">10/20</td>
+        <td class="diff-cell diff-pos">+2</td>
+      </tr>
+      <tr class="highlight">
+        <td class="dim-name">R &mdash; Resilience</td>
+        <td class="score-cell">4/20</td>
+        <td class="score-cell">14/20</td>
+        <td class="diff-cell diff-pos">+10</td>
+      </tr>
+      <tr>
+        <td class="dim-name">D &mdash; Data Conduct</td>
+        <td class="score-cell">8/15</td>
+        <td class="score-cell">8/15</td>
+        <td class="diff-cell diff-zero">0</td>
+      </tr>
+      <tr>
+        <td class="dim-name">I &mdash; Identity &amp; Control</td>
+        <td class="score-cell">5/10</td>
+        <td class="score-cell">5/10</td>
+        <td class="diff-cell diff-zero">0</td>
+      </tr>
+      <tr>
+        <td class="dim-name">C &mdash; Containment</td>
+        <td class="score-cell">4/10</td>
+        <td class="score-cell">4/10</td>
+        <td class="diff-cell diff-zero">0</td>
+      </tr>
+      <tr>
+        <td class="dim-name">T &mdash; Transparency</td>
+        <td class="score-cell">6/10</td>
+        <td class="score-cell">5/10</td>
+        <td class="diff-cell diff-neg">&minus;1</td>
+      </tr>
+      <tr style="border-top:2px solid var(--navy);">
+        <td class="dim-name">Total</td>
+        <td class="score-cell" style="font-weight:700;">35/85</td>
+        <td class="score-cell" style="font-weight:700;">46/85</td>
+        <td class="diff-cell diff-pos" style="font-weight:700;">+11</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">The 11-point gap is concentrated in a single dimension. Resilience (R) accounts for 10 of the 11 points. On Data Conduct, Identity &amp; Control, and Containment, both platforms score identically.</div>
+
+  <h2>Where n8n Scores Lower: Resilience</h2>
+
+  <div class="detail detail-risk">
+    <div class="detail-label">n8n &mdash; R: 4/20</div>
+    <div class="detail-text">n8n disclosed 12+ CVEs in the trailing 12-month period, including two at CVSS 10.0 (the maximum possible severity). CVE-2025-68613 (CVSS 9.9) was added to the CISA Known Exploited Vulnerabilities catalog in March 2026, confirming active exploitation in the wild. Censys identified over 100,000 potentially vulnerable instances at disclosure. Five or more CVEs share the same root cause: sandbox bypass in a blocklist-based architecture. The v2.0 migration to Pyodide/WASM represents an architectural acknowledgment of this limitation.</div>
+  </div>
+
+  <div class="detail detail-safe">
+    <div class="detail-label">Make.com &mdash; R: 14/20</div>
+    <div class="detail-text">Zero CVEs were confirmed for Make.com in any period searched (NVD, GHSA). Make.com operates as a closed-source cloud platform, which limits community vulnerability discovery but also limits the public attack surface visible to researchers. No CISA KEV entries. No supply chain incidents confirmed.</div>
+  </div>
+
+  <h2>Where n8n Scores Higher: Transparency</h2>
+
+  <div class="detail detail-safe">
+    <div class="detail-label">n8n &mdash; T: 6/10</div>
+    <div class="detail-text">n8n publishes a SECURITY.md with a defined vulnerability reporting process and a 90-day disclosure timeline. Security advisories are published through GitHub Security Advisories. The project's open-source nature provides inherent code transparency. Despite the high CVE count, the disclosure posture is documented and functional.</div>
+  </div>
+
+  <div class="detail">
+    <div class="detail-label">Make.com &mdash; T: 5/10</div>
+    <div class="detail-text">Make.com publishes a security page and maintains a responsible disclosure process. As a closed-source platform, code-level transparency is not available. No public security advisories were identified during the evaluation period.</div>
+  </div>
+
+  <h2>Where Both Score the Same</h2>
+
+  <p>Three dimensions produced identical scores, revealing structural similarities between the two platforms despite their different architectures (self-hosted open source vs. cloud SaaS).</p>
+
+  <div class="detail">
+    <div class="detail-label">Data Conduct &mdash; Both 8/15</div>
+    <div class="detail-text">Both platforms document GDPR compliance. Make.com publishes a DPA and sub-processor list. n8n's self-hosted option provides inherent data sovereignty (data never leaves the user's infrastructure). Neither platform has a publicly documented AI model training opt-out policy.</div>
+  </div>
+
+  <div class="detail">
+    <div class="detail-label">Identity &amp; Control &mdash; Both 5/10</div>
+    <div class="detail-text">Both platforms offer RBAC and workflow-level permissions. Neither documents a formal emergency stop mechanism for runaway automations. Make.com provides SSO on enterprise plans. n8n provides user management in the self-hosted version.</div>
+  </div>
+
+  <div class="detail">
+    <div class="detail-label">Containment &mdash; Both 4/10</div>
+    <div class="detail-text">This is the most significant shared weakness. n8n's pre-v2.0 blocklist sandbox produced five or more bypass CVEs. Make.com's execution isolation is not publicly documented beyond the shared cloud infrastructure. Both platforms connect to hundreds of third-party services, creating a broad integration attack surface. Containment is the weakest average dimension across the VERDICT index (4.9/10).</div>
+  </div>
+
+  <h2>Architecture: Different Models, Shared Risks</h2>
+
+  <p>n8n is an open-source, self-hostable workflow automation platform (fair-code license). Make.com is a closed-source cloud SaaS. This architectural difference creates different risk profiles rather than uniformly better or worse ones.</p>
+
+  <p>Self-hosted n8n gives organizations full control over data residency, network configuration, and patch timing. It also means the organization is responsible for applying security patches, configuring sandboxing, and managing access control. The 100,000+ potentially vulnerable instances identified by Censys during the CISA KEV disclosure suggest many self-hosted deployments do not keep pace with security updates.</p>
+
+  <p>Make.com as a cloud SaaS applies patches centrally and manages infrastructure security. Users cannot inspect the execution environment, audit the codebase, or verify containment architecture. The zero-CVE record may reflect actual security strength, or it may reflect reduced visibility into a closed system.</p>
+
+  <h2>The CISA KEV Differential</h2>
+
+  <p>n8n is one of two platforms in the VERDICT index listed in the CISA Known Exploited Vulnerabilities catalog (the other is Langflow). CVE-2025-68613 (CVSS 9.9) allows authenticated users to execute arbitrary code with n8n process privileges. Federal agencies subject to Binding Operational Directive 22-01 must remediate KEV-listed vulnerabilities within specified deadlines.</p>
+
+  <p>Make.com has no CISA KEV entries. For procurement teams evaluating both platforms, this is a binary distinction: one has confirmed active exploitation in the wild, the other does not.</p>
+
+  <h2>What This Data Shows</h2>
+
+  <p>The comparison reveals that the security gap between n8n and Make.com is narrow in most dimensions and concentrated in vulnerability history. Teams prioritizing auditability and data sovereignty may weigh n8n's open-source transparency and self-hosting options. Teams prioritizing a clean vulnerability record and managed security may weigh Make.com's zero-CVE history and cloud-managed infrastructure.</p>
+
+  <p>Both platforms share the same containment weakness (4/10) that characterizes the workflow automation category. Neither has solved the fundamental challenge of limiting blast radius when a connected third-party service or a workflow execution is compromised.</p>
+
+  <p>VERDICT presents the data. The weighting of each dimension is a decision for the procurement team evaluating these platforms for their specific use case and risk tolerance.</p>
+
+  <div class="cta-bar">
+    <a href="/n8n/" class="cta-link">n8n Full Evaluation</a>
+    <a href="/make/" class="cta-link">Make.com Full Evaluation</a>
+    <a href="/" class="cta-link">View All 36 Evaluations</a>
+    <a href="/methodology/" class="cta-link">Methodology</a>
+    <a href="/#subscribe" class="cta-link">Get Score Updates</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-note">
+    VERDICT is not a certification authority. Scores are evaluations, not guarantees. This comparison does not constitute a recommendation for or against either platform.<br>
+    VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a>
+  </div>
+</footer>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4dbc22ec4e18434e9bdbc01d644490c0"}'></script>
+</body>
+</html>
