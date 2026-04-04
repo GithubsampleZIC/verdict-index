@@ -25,7 +25,7 @@
   <div class="meta">Autonomous AI Agent Platform · Source-Available (Polyform Shield + MIT)</div>
   <div class="meta">Evaluated 2026.03.31 &middot; Framework v0.3.1</div>
   <div class="meta-owner">Determinist Ltd · United Kingdom</div>
-  <div class="score-hero"><div><span class="score-big">36</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #32 of 43 platforms evaluated<br>Framework v0.3.1</div></div>
+  <div class="score-hero"><div><span class="score-big">36</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #35 of 46 platforms evaluated<br>Framework v0.3.1</div></div>
   <div class="finding">Highest transparency score in the VERDICT index (T: 10/10). Six self-published security advisories with patches. Recurring SSRF pattern (3/6 advisories). Cross-user data leak via WebSockets (patched). 183k GitHub stars. $12M funded.</div>
   <div class="tags"><span class="tag tag-safe">T: 10/10 · Index Highest</span>
     <span class="tag tag-red">6 Advisories · 2 Critical SSRF</span>
@@ -41,7 +41,7 @@
     </svg></div>
     <div class="dim-list" id="dims" data-dims='[{"l":"V","s":10,"m":20},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":4,"m":20,"low":true},{"l":"D","s":5,"m":15},{"l":"I","s":3,"m":10,"low":true},{"l":"C","s":4,"m":10},{"l":"T","s":10,"m":10,"high":true}]'></div>
   </div>
-  <div class="cta-bar"><a href="/" class="cta-link">View All 43 Evaluations</a><a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a></div>
+  <div class="cta-bar"><a href="/" class="cta-link">View All 46 Evaluations</a><a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a></div>
 </div>
 <footer><div class="footer-note">VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a><br>Evaluation tooling uses Claude (Anthropic). Bias disclosures in full reports.</div></footer>
 <script>document.querySelectorAll('.dim-list').forEach(list=>{const dims=JSON.parse(list.dataset.dims);dims.forEach(d=>{const pct=d.inactive?100:Math.round((d.s/d.m)*100);const isLow=!d.inactive&&pct<30;const isHigh=!d.inactive&&pct>=65;const fillClass=d.inactive?'fill-inactive':isLow?'fill-low':'';const letterClass=d.inactive?'dim-inactive':'';const valClass=d.inactive?'val-inactive':isHigh?'val-high':'';const valText=d.inactive?'L1':d.s+'/'+d.m;list.innerHTML+='<div class="dim-row"><span class="dim-letter '+letterClass+'">'+d.l+'</span><div class="dim-bar-track"><div class="dim-bar-fill '+fillClass+'" style="width:'+(d.inactive?'100':pct)+'%"></div></div><span class="dim-val '+valClass+'">'+valText+'</span></div>';});});</script>

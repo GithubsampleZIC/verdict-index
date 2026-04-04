@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AG2 (AutoGen Fork) Security Review — VERDICT Score: 40/85</title>
-<meta name="description" content="Independent security evaluation of AG2 (AutoGen fork). Score: 40/85. Zero AG2-specific CVEs. No MSRC coverage. PyPI namespace governance concern. Community-maintained. Framework v0.3.1.">
-<meta property="og:title" content="AG2 (AutoGen Fork) Security Review — VERDICT Score: 40/85">
-<meta property="og:description" content="Independent security evaluation of AG2 (AutoGen fork). Score: 40/85. Zero AG2-specific CVEs. No MSRC coverage. PyPI namespace governance concern. Community-maintained. Framework v0.3.1.">
-<meta property="og:url" content="https://getverdict.fyi/ag2/">
+<title>Bolt.new Security Review — VERDICT Score: 47/85</title>
+<meta name="description" content="Independent security evaluation of Bolt.new by StackBlitz. Score: 47/85. WebContainers browser-native sandbox. Zero CVEs. No SOC 2. No AI training policy. Open-source core. Framework v0.3.1.">
+<meta property="og:title" content="Bolt.new Security Review — VERDICT Score: 47/85">
+<meta property="og:description" content="Independent security evaluation of Bolt.new by StackBlitz. Score: 47/85. WebContainers browser-native sandbox. Zero CVEs. No SOC 2. No AI training policy. Open-source core. Framework v0.3.1.">
+<meta property="og:url" content="https://getverdict.fyi/bolt-new/">
 <meta property="og:type" content="article">
-<link rel="canonical" href="https://getverdict.fyi/ag2/">
+<link rel="canonical" href="https://getverdict.fyi/bolt-new/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -20,30 +20,29 @@
 <body>
 <header><a href="/" class="logo"><span class="logo-mark">VERDICT</span><span class="logo-sub">AI Agent Trust Index</span></a><a href="/" class="back">&larr; All Evaluations</a></header>
 <div class="wrap">
-  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; AG2</div>
-  <h1>AG2</h1>
-  <div class="meta">Multi-Agent Orchestration Framework · Open Source (Apache 2.0)</div>
-  <div class="meta">Evaluated 2026.03.31 &middot; Framework v0.3.1</div>
-  <div class="meta-owner">AG2AI Inc. · Community Governance</div>
-  <div class="score-hero"><div><span class="score-big">40</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #31 of 46 platforms evaluated<br>Framework v0.3.1</div></div>
-  <div class="finding">Community fork of Microsoft AutoGen. Zero AG2-specific CVEs. Inherits Docker code execution from AutoGen. No MSRC coverage (16-point gap vs AutoGen 56/85). Controls autogen/pyautogen PyPI namespaces — unique supply chain governance concern. No SECURITY.md.</div>
-  <div class="tags"><span class="tag tag-dim">Apache 2.0 · AutoGen Fork</span>
-    <span class="tag tag-dim">0 CVEs · AG2-Specific</span>
-    <span class="tag tag-amber">No MSRC Coverage</span>
-    <span class="tag tag-amber">PyPI Namespace Governance</span>
-    <span class="tag tag-amber">No SECURITY.md</span></div>
+  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; Bolt.new</div>
+  <h1>Bolt.new</h1>
+  <div class="meta">AI App Builder · Open Source Core</div>
+  <div class="meta">Evaluated 2026.04.03 &middot; Framework v0.3.1</div>
+  <div class="meta-owner">StackBlitz Inc. · USA · $700M Valuation</div>
+  <div class="score-hero"><div><span class="score-big">47</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #17 of 46 platforms evaluated<br>Framework v0.3.1</div></div>
+  <div class="finding">WebContainers: code runs entirely in browser via WebAssembly — never on servers during development. Zero CVEs. Open-source core (github.com/stackblitz/bolt.new). No SOC 2. No explicit AI training policy. 5M+ users.</div>
+  <div class="tags"><span class="tag tag-safe">WebContainers · Browser Sandbox</span>
+    <span class="tag tag-dim">Zero CVEs · Open Source Core</span>
+    <span class="tag tag-amber">No SOC 2 · No Training Policy</span>
+    <span class="tag tag-dim">$700M · 5M+ Users</span></div>
   <div class="radar-section">
     <div class="radar-wrap"><svg class="radar-svg" viewBox="0 0 240 240">
         <polygon class="radar-ring" points="120,102 134.1,108.8 137.5,124 127.8,136.2 112.2,136.2 102.5,124 105.9,108.8"/><polygon class="radar-ring" points="120,84 148.1,97.6 155.1,128 135.6,152.4 104.4,152.4 84.9,128 91.9,97.6"/><polygon class="radar-ring" points="120,66 162.2,86.3 172.6,132 143.4,168.7 96.6,168.7 67.4,132 77.8,86.3"/><polygon class="radar-ring" points="120,48 176.3,75.1 190.2,136 151.2,184.9 88.8,184.9 49.8,136 63.7,75.1"/>
         <line class="radar-axis" x1="120" y1="120" x2="120" y2="48"/><line class="radar-axis radar-axis-inactive" x1="120" y1="120" x2="176.3" y2="75.1"/><line class="radar-axis" x1="120" y1="120" x2="190.2" y2="136"/><line class="radar-axis" x1="120" y1="120" x2="151.2" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="88.8" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="49.8" y2="136"/><line class="radar-axis" x1="120" y1="120" x2="63.7" y2="75.1"/>
-        <g class="radar-data"><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,76.8 120.0,120.0 169.1,131.2 130.4,141.6 110.6,139.5 91.9,126.4 108.7,111.0"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,76.8 120.0,120.0 169.1,131.2 130.4,141.6 110.6,139.5 91.9,126.4 108.7,111.0"/></g>
+        <g class="radar-data"><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,76.8 120.0,120.0 179.7,133.6 128.3,137.3 110.6,139.5 70.9,131.2 97.5,102.0"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,76.8 120.0,120.0 179.7,133.6 128.3,137.3 110.6,139.5 70.9,131.2 97.5,102.0"/></g>
         <text class="radar-label" x="120" y="22" text-anchor="middle">V</text><text class="radar-label radar-label-inactive" x="193" y="61" text-anchor="start">E</text><text class="radar-label" x="212" y="141" text-anchor="start">R</text><text class="radar-label" x="161" y="205" text-anchor="start">D</text><text class="radar-label" x="79" y="205" text-anchor="end">I</text><text class="radar-label" x="28" y="141" text-anchor="end">C</text><text class="radar-label" x="47" y="61" text-anchor="end">T</text>
     </svg></div>
-    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":12,"m":20},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":14,"m":20},{"l":"D","s":5,"m":15},{"l":"I","s":3,"m":10,"low":true},{"l":"C","s":4,"m":10},{"l":"T","s":2,"m":10,"low":true}]'></div>
+    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":12,"m":20},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":17,"m":20,"high":true},{"l":"D","s":4,"m":15,"low":true},{"l":"I","s":3,"m":10,"low":true},{"l":"C","s":7,"m":10,"high":true},{"l":"T","s":4,"m":10}]'></div>
   </div>
   <div class="cta-bar"><a href="/" class="cta-link">View All 46 Evaluations</a><a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a></div>
 </div>
-<footer><div class="footer-note">VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a><br>Evaluation tooling uses Claude (Anthropic). Anthropic competes with Microsoft (AutoGen origin). Bias disclosures in full reports.</div></footer>
+<footer><div class="footer-note">VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a><br>Evaluation tooling uses Claude (Anthropic). Bias disclosures in full reports.</div></footer>
 <script>document.querySelectorAll('.dim-list').forEach(list=>{const dims=JSON.parse(list.dataset.dims);dims.forEach(d=>{const pct=d.inactive?100:Math.round((d.s/d.m)*100);const isLow=!d.inactive&&pct<30;const isHigh=!d.inactive&&pct>=65;const fillClass=d.inactive?'fill-inactive':isLow?'fill-low':'';const letterClass=d.inactive?'dim-inactive':'';const valClass=d.inactive?'val-inactive':isHigh?'val-high':'';const valText=d.inactive?'L1':d.s+'/'+d.m;list.innerHTML+='<div class="dim-row"><span class="dim-letter '+letterClass+'">'+d.l+'</span><div class="dim-bar-track"><div class="dim-bar-fill '+fillClass+'" style="width:'+(d.inactive?'100':pct)+'%"></div></div><span class="dim-val '+valClass+'">'+valText+'</span></div>';});});</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4dbc22ec4e18434e9bdbc01d644490c0"}'></script>
 </body></html>
