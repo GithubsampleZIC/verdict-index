@@ -185,6 +185,7 @@ footer{border-top:1px solid var(--divider);padding:3rem;max-width:1200px;margin:
   .report-banner-inner{flex-direction:column;text-align:center;padding:1.5rem;}
 }
 @media(max-width:768px){.header-nav{display:none !important;}}
+.quick-nav{display:flex;flex-wrap:wrap;gap:.6rem;padding:1.5rem 0 2rem;border-bottom:1px solid var(--divider);margin-bottom:2.5rem;}.qn-btn{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;color:var(--navy);padding:.45rem .9rem;border:1px solid var(--divider);text-decoration:none;transition:all .15s;white-space:nowrap;}.qn-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy);text-decoration:none;}.qn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}.qn-primary:hover{background:var(--navy-light);border-color:var(--navy-light);}
 </style>
 
 </head>
@@ -257,6 +258,16 @@ footer{border-top:1px solid var(--divider);padding:3rem;max-width:1200px;margin:
 
   <div class="eval-grid">
 
+
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav">
+      <a href="/rankings/" class="qn-btn qn-primary">Full Rankings</a>
+      <a href="/compare/coding-agents/" class="qn-btn">Coding Agents</a>
+      <a href="/compare/ai-app-builders/" class="qn-btn">AI App Builders</a>
+      <a href="/compare/n8n-vs-make/" class="qn-btn">n8n vs Make</a>
+      <a href="/methodology/" class="qn-btn">Methodology</a>
+    </div>
 
     <!-- Amazon Q Business 68 -->
     <a class="eval-card" href="/amazon-q-business/" data-platform="amazon-q-business">
