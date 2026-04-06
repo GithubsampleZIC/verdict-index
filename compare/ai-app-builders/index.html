@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+<title>AI App Builder Security Comparison — Lovable vs v0 vs Bolt.new — VERDICT</title>
+<meta name="description" content="Independent security comparison of 3 AI app builders: Lovable (63/85), v0 (56), Bolt.new (47). Data conduct, containment, and certification analysis.">
+<meta property="og:title" content="AI App Builder Security Comparison — VERDICT">
+<meta property="og:url" content="https://getverdict.fyi/compare/ai-app-builders/">
+<link rel="canonical" href="https://getverdict.fyi/compare/ai-app-builders/">
+<style>
+:root{--white:#FFFFFF;--ice:#F5F6F8;--navy:#1B2A4A;--navy-light:#2A3D66;--heading:#1A1A2E;--body:#4A5060;--caption:#6B7280;--risk:#C4332B;--risk-bg:rgba(196,51,43,0.06);--caution:#C08520;--caution-bg:rgba(192,133,32,0.06);--safe:#2D7A4F;--safe-bg:rgba(45,122,79,0.06);--divider:#E2E5EB;--serif:'Source Serif 4',Georgia,serif;--sans:'Libre Franklin',-apple-system,sans-serif;--mono:'JetBrains Mono',monospace;--score:'Merriweather',Georgia,serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}body{background:var(--white);color:var(--body);font-family:var(--sans);font-weight:400;line-height:1.6;}a{color:var(--navy);text-decoration:none;}a:hover{text-decoration:underline;}header{padding:0 2.5rem;height:58px;display:flex;align-items:center;justify-content:space-between;background:var(--white);border-bottom:1px solid var(--divider);}.logo{display:flex;align-items:baseline;gap:.75rem;text-decoration:none;}.logo:hover{text-decoration:none;}.logo-mark{font-family:var(--serif);font-size:1.25rem;font-weight:700;letter-spacing:.1em;color:var(--navy);}.logo-sub{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;color:var(--caption);text-transform:uppercase;}.back{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--caption);text-decoration:none;}.back:hover{color:var(--navy);}.wrap{max-width:960px;margin:0 auto;padding:3rem 2.5rem;}.breadcrumb{font-family:var(--mono);font-size:.65rem;color:var(--caption);margin-bottom:2rem;}.breadcrumb a{color:var(--caption);}.breadcrumb a:hover{color:var(--navy);}h1{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:700;line-height:1.15;color:var(--heading);margin-bottom:.5rem;}h2{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--heading);margin:2.5rem 0 1rem;}.subtitle{font-family:var(--sans);font-size:.9rem;color:var(--body);line-height:1.7;margin-bottom:2rem;max-width:640px;}footer{border-top:1px solid var(--divider);padding:2rem 2.5rem;max-width:960px;margin:0 auto;}.footer-note{font-family:var(--mono);font-size:.62rem;color:var(--caption);line-height:1.8;}.footer-note a{color:var(--navy);}
+.tier-label{font-family:var(--score);font-weight:900;font-size:1.6rem;color:var(--navy);width:40px;text-align:center;flex-shrink:0;}
+.tier-section{margin-bottom:2rem;}
+.tier-header{display:flex;align-items:center;gap:1rem;padding:.75rem 0;border-bottom:2px solid var(--navy);margin-bottom:.75rem;}
+.tier-name{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--caption);}
+.tier-count{font-family:var(--mono);font-size:.6rem;color:var(--caption);margin-left:auto;}
+.rank-row{display:grid;grid-template-columns:32px 1fr 55px;align-items:center;gap:.75rem;padding:.5rem .5rem;border-bottom:1px solid var(--divider);text-decoration:none;transition:background .15s;}
+.rank-row:hover{background:var(--ice);text-decoration:none;}
+.rank-num{font-family:var(--mono);font-size:.7rem;color:var(--caption);text-align:right;}
+.rank-info{display:flex;flex-direction:column;gap:.1rem;}
+.rank-name{font-family:var(--sans);font-size:.85rem;font-weight:500;color:var(--heading);}
+.rank-cat{font-family:var(--mono);font-size:.6rem;color:var(--caption);}
+.rank-score{font-family:var(--score);font-weight:900;font-size:1.1rem;color:var(--navy);text-align:right;}
+.cmp-table{width:100%;border-collapse:collapse;margin:1.5rem 0;}
+.cmp-table th{font-family:var(--mono);font-size:.65rem;letter-spacing:.05em;text-transform:uppercase;color:var(--caption);text-align:left;padding:.6rem .5rem;border-bottom:2px solid var(--navy);font-weight:500;}
+.cmp-table th.score-col{text-align:center;}
+.cmp-table td{font-family:var(--sans);font-size:.8rem;color:var(--body);padding:.5rem;border-bottom:1px solid var(--divider);vertical-align:top;}
+.cmp-table td.dim-label{font-family:var(--mono);font-size:.75rem;font-weight:600;color:var(--navy);}
+.cmp-table td.score-cell{text-align:center;font-family:var(--mono);font-size:.8rem;font-weight:500;}
+.cmp-table td.score-cell.high{color:var(--safe);font-weight:600;}
+.cmp-table td.score-cell.low{color:var(--risk);font-weight:600;}
+.cmp-table td.score-cell.mid{color:var(--caution);}
+.cmp-total{font-family:var(--score);font-weight:900;font-size:1.1rem;color:var(--navy);}
+.insight-box{background:var(--ice);border-left:3px solid var(--navy);padding:1rem 1.25rem;margin:1.5rem 0;font-size:.85rem;line-height:1.7;}
+.cta-bar{border-top:1px solid var(--divider);padding-top:2rem;margin-top:2.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;}
+.cta-link{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;color:var(--navy);padding:.5rem 1rem;border:1px solid var(--divider);text-decoration:none;transition:all .2s;}.cta-link:hover{background:var(--navy);color:var(--white);border-color:var(--navy);text-decoration:none;}
+.tag{font-family:var(--mono);font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .5rem;border:1px solid;display:inline-block;margin:.1rem .2rem .1rem 0;}
+.tag-safe{border-color:rgba(45,122,79,.3);color:var(--safe);background:var(--safe-bg);}
+.tag-red{border-color:rgba(196,51,43,.3);color:var(--risk);background:var(--risk-bg);}
+.tag-amber{border-color:rgba(192,133,32,.3);color:var(--caution);background:var(--caution-bg);}
+.tag-dim{border-color:var(--divider);color:var(--caption);background:var(--ice);}
+@media(max-width:700px){.rank-row{grid-template-columns:28px 1fr 45px;}.cmp-table{font-size:.7rem;}}
+</style>
+</head>
+<body>
+<header><a href="/" class="logo"><span class="logo-mark">VERDICT</span><span class="logo-sub">AI Agent Trust Index</span></a><a href="/" class="back">&larr; All Evaluations</a></header>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; <a href="/rankings/">Rankings</a> &rsaquo; AI App Builders</div>
+  <h1>AI app builders compared</h1>
+  <div class="subtitle">Three AI app builders evaluated on security, privacy, and compliance. All generate full-stack web applications from natural language prompts. Layer 0, Framework v0.3.1. Updated April 2026.</div>
+
+  <table class="cmp-table">
+    <thead><tr>
+      <th>Dimension</th><th>Max</th>
+      <th class="score-col"><a href="/lovable/">Lovable</a></th>
+      <th class="score-col"><a href="/v0/">v0</a></th>
+      <th class="score-col"><a href="/bolt-new/">Bolt.new</a></th>
+    </tr></thead>
+    <tbody>
+      <tr><td class="dim-label">V</td><td>20</td><td class="score-cell">10</td><td class="score-cell high">13</td><td class="score-cell">12</td></tr>
+      <tr><td class="dim-label">R</td><td>20</td><td class="score-cell high">17</td><td class="score-cell high">17</td><td class="score-cell high">17</td></tr>
+      <tr><td class="dim-label">D</td><td>15</td><td class="score-cell high">13</td><td class="score-cell">8</td><td class="score-cell low">4</td></tr>
+      <tr><td class="dim-label">I</td><td>10</td><td class="score-cell high">8</td><td class="score-cell">5</td><td class="score-cell low">3</td></tr>
+      <tr><td class="dim-label">C</td><td>10</td><td class="score-cell high">7</td><td class="score-cell">6</td><td class="score-cell high">7</td></tr>
+      <tr><td class="dim-label">T</td><td>10</td><td class="score-cell high">8</td><td class="score-cell high">7</td><td class="score-cell">4</td></tr>
+      <tr style="border-top:2px solid var(--navy)"><td class="dim-label">Total</td><td>85</td>
+        <td class="score-cell"><span class="cmp-total">63</span></td>
+        <td class="score-cell"><span class="cmp-total">56</span></td>
+        <td class="score-cell"><span class="cmp-total">47</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Key differentiators</h2>
+  <table class="cmp-table">
+    <thead><tr><th>Feature</th><th>Lovable</th><th>v0</th><th>Bolt.new</th></tr></thead>
+    <tbody>
+      <tr><td class="dim-label">Origin</td><td>Sweden (EU)</td><td>USA</td><td>USA</td></tr>
+      <tr><td class="dim-label">SOC 2 Type II</td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes (v0 in scope)</span></td><td><span class="tag tag-dim">No</span></td></tr>
+      <tr><td class="dim-label">ISO 27001</td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-dim">No</span></td></tr>
+      <tr><td class="dim-label">GDPR / DPA</td><td><span class="tag tag-safe">EU native + DPO</span></td><td><span class="tag tag-safe">DPA + DPF</span></td><td><span class="tag tag-dim">No DPA</span></td></tr>
+      <tr><td class="dim-label">Training policy</td><td><span class="tag tag-safe">No (explicit)</span></td><td><span class="tag tag-amber">Tiered opt-in/out</span></td><td><span class="tag tag-red">Not stated</span></td></tr>
+      <tr><td class="dim-label">Security scanners</td><td><span class="tag tag-safe">4 automated</span></td><td><span class="tag tag-dim">None</span></td><td><span class="tag tag-dim">None</span></td></tr>
+      <tr><td class="dim-label">Execution model</td><td>Cloud</td><td>Vercel Sandbox (VM)</td><td>WebContainers (browser)</td></tr>
+      <tr><td class="dim-label">Open source</td><td><span class="tag tag-dim">Closed (gpt-engineer origin)</span></td><td><span class="tag tag-dim">Closed</span></td><td><span class="tag tag-safe">OSS core</span></td></tr>
+      <tr><td class="dim-label">Valuation</td><td>$6.6B</td><td>$3.25B (Vercel)</td><td>$700M</td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box">All three share R: 17/20 (zero CVEs). The 16-point gap between Lovable (63) and Bolt.new (47) comes from D (+9), I (+5), and T (+4). Lovable's EU jurisdiction, explicit no-training policy, and four automated security scanners are the primary differentiators. Bolt.new's WebContainers provide the strongest architectural containment (C: 7/10, tied with Lovable) but lack formal documentation and certification.</div>
+
+  <div class="cta-bar"><a href="/rankings/" class="cta-link">Full Rankings (50 Platforms)</a><a href="/compare/coding-agents/" class="cta-link">Coding Agents Compared</a><a href="/methodology/" class="cta-link">Methodology</a></div>
+</div>
+<footer><div class="footer-note">VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a><br>Evaluation tooling uses Claude (Anthropic). Bias disclosures in full reports.</div></footer>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4dbc22ec4e18434e9bdbc01d644490c0"}'></script>
+</body></html>
