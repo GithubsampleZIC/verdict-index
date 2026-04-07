@@ -1,0 +1,4 @@
+*.backup
+fix_manus_ai.py
+deploy_*.py
+*.py.bak
