@@ -2,186 +2,322 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://getverdict.fyi/</loc>
-    <lastmod>2026-03-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-07</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://getverdict.fyi/report/q1-2026/</loc>
-    <lastmod>2026-03-28</lastmod>
-    <changefreq>quarterly</changefreq>
-    <priority>0.9</priority>
+    <loc>https://getverdict.fyi/amazon-q-business/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/vertex-ai/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/lovable/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/devin/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/copilot-studio/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/openai-assistants/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/agentforce/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/windsurf/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/dust/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/github-copilot/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/autogen/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/pipedream/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/v0/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/bedrock-agents/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/activepieces/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/voiceflow/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/langchain/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/zapier/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/dify/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/make/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/semantic-kernel/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/botpress/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/crewai/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/llamaindex/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/coze/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/n8n/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/flowise/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/langflow/</loc>
-    <lastmod>2026-03-29</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/watsonx-orchestrate/</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/replit/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/zapier/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/bolt-new/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/cursor/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/haystack/</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/amazon-q-business/</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/relevance-ai/</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://getverdict.fyi/letta/</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/composio/</loc>
-    <lastmod>2026-03-30</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
   </url>
-  <url><loc>https://getverdict.fyi/dust/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/ag2/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/langroid/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/wordware/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/superagent/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/voiceflow/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/phidata/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/rivet/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/babyagi/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/metagpt/</loc><lastmod>2026-03-31</lastmod><priority>0.8</priority></url>
+  <url>
+    <loc>https://getverdict.fyi/dify/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/langgraph/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/make/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/semantic-kernel/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/botpress/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/crewai/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/openhands/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/relevance-ai/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/superagent/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/llamaindex/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/ag2/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/rivet/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/phidata/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/letta/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/autogpt/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/coze/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/manus-ai/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/n8n/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/wordware/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/langroid/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/camel-ai/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/flowise/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/langflow/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/babyagi/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/metagpt/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/superagi/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/browser-use/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/browserbase/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/skyvern/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/stagehand/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/runner-h/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://getverdict.fyi/about/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/methodology/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/rankings/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/report/q1-2026/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/compare/coding-agents/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/compare/ai-app-builders/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/compare/browser-agents/</loc>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://getverdict.fyi/compare/n8n-vs-make/</loc>
-    <lastmod>2026-04-01</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-04-07</lastmod>
+    <priority>0.8</priority>
   </url>
-  <url><loc>https://getverdict.fyi/autogpt/</loc><lastmod>2026-04-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/openhands/</loc><lastmod>2026-04-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/camel-ai/</loc><lastmod>2026-04-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/superagi/</loc><lastmod>2026-04-01</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/devin/</loc><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/cursor/</loc><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/manus-ai/</loc><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/lovable/</loc><lastmod>2026-04-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/bolt-new/</loc><lastmod>2026-04-03</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/langgraph/</loc><lastmod>2026-04-04</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/windsurf/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/v0/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/replit/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/github-copilot/</loc><lastmod>2026-04-06</lastmod><priority>0.8</priority></url>
-  <url><loc>https://getverdict.fyi/rankings/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
-  <url><loc>https://getverdict.fyi/compare/coding-agents/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
-  <url><loc>https://getverdict.fyi/compare/ai-app-builders/</loc><lastmod>2026-04-06</lastmod><priority>0.9</priority></url>
 </urlset>

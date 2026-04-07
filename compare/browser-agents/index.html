@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser Agents Compared — VERDICT</title>
+<meta name="description" content="Independent security comparison of 6 browser agent platforms: Browserbase, Skyvern, Stagehand, Runner H, Browser Use, Manus AI. SOC 2 status, CVE counts, jurisdiction, licensing.">
+<meta property="og:title" content="Browser Agents Compared — VERDICT">
+<meta property="og:description" content="VERDICT independent comparison of 6 browser agent platforms.">
+<meta property="og:url" content="https://getverdict.fyi/compare/browser-agents/">
+<link rel="canonical" href="https://getverdict.fyi/compare/browser-agents/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Libre+Franklin:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:#FFFFFF;--ice:#F5F6F8;--navy:#1B2A4A;--heading:#1A1A2E;--body:#4A5060;
+  --caption:#6B7280;--divider:#E2E5EB;--risk:#C4332B;--safe:#2D7A4F;--caution:#C08520;
+  --mono:'JetBrains Mono',monospace;--serif:'Source Serif 4',serif;--sans:'Libre Franklin',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--white);color:var(--body);font-family:var(--sans);line-height:1.65;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1100px;margin:0 auto;padding:4rem 2rem;}
+.breadcrumb{font-family:var(--mono);font-size:.75rem;letter-spacing:.1em;color:var(--caption);margin-bottom:1.5rem;text-transform:uppercase;}
+.breadcrumb a{color:var(--navy);text-decoration:none;}
+h1{font-family:var(--serif);font-size:2.5rem;font-weight:700;color:var(--heading);line-height:1.15;margin-bottom:1rem;}
+.lede{font-size:1.05rem;color:var(--body);margin-bottom:2.5rem;max-width:720px;line-height:1.75;}
+.table-wrap{overflow-x:auto;margin-bottom:3rem;border:1px solid var(--divider);}
+table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:900px;}
+th{padding:.8rem .7rem;text-align:left;background:var(--ice);font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--caption);border-bottom:1px solid var(--divider);}
+th.center,td.center{text-align:center;}
+td{padding:1rem .7rem;border-bottom:1px solid var(--divider);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--ice);}
+section{margin-bottom:2.5rem;}
+section h2{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--heading);margin-bottom:1rem;}
+section p{font-size:.95rem;line-height:1.75;color:var(--body);margin-bottom:1rem;}
+.finding-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem;}
+.finding-box{border:1px solid var(--divider);padding:1.5rem;}
+.finding-label{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--caption);margin-bottom:.5rem;}
+.finding-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--heading);margin-bottom:.5rem;}
+.finding-text{font-size:.88rem;line-height:1.65;color:var(--body);}
+.back{display:inline-block;margin-top:2rem;font-family:var(--mono);font-size:.85rem;color:var(--navy);text-decoration:none;border:1px solid var(--divider);padding:.8rem 1.5rem;transition:background .2s;}
+.back:hover{background:var(--ice);}
+footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--divider);font-size:.8rem;color:var(--caption);}
+@media(max-width:700px){
+  .wrap{padding:2rem 1.5rem;}
+  h1{font-size:1.8rem;}
+  .finding-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/">VERDICT</a> / Compare / Browser Agents</div>
+  <h1>Browser Agents Compared</h1>
+  <p class="lede">Six browser agent platforms evaluated under VERDICT Framework v0.3.1. Three architectural categories — infrastructure, agent, and framework — across three licensing models and two jurisdictions. SOC 2 status and CVE counts shown for the trailing twelve months.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th class="center">Score</th>
+          <th>Type</th>
+          <th>Juris.</th>
+          <th>License</th>
+          <th class="center">V</th>
+          <th class="center">R</th>
+          <th class="center">D</th>
+          <th class="center">I</th>
+          <th class="center">C</th>
+          <th class="center">T</th>
+          <th>SOC 2</th>
+          <th class="center">CVEs</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><a href="/browserbase/" style="color:var(--navy);text-decoration:none;font-weight:600;">Browserbase</a></td>
+        <td style="font-family:var(--mono);font-weight:700;color:var(--safe);">58</td>
+        <td>Infrastructure</td>
+        <td>US</td>
+        <td>Proprietary</td>
+        <td style="font-family:var(--mono);">12</td>
+        <td style="font-family:var(--mono);">20</td>
+        <td style="font-family:var(--mono);">9</td>
+        <td style="font-family:var(--mono);">8</td>
+        <td style="font-family:var(--mono);">6</td>
+        <td style="font-family:var(--mono);">3</td>
+        <td style="font-family:var(--mono);font-size:.8rem;">Type II</td>
+        <td style="font-family:var(--mono);">0</td>
+      </tr>
+      <tr>
+        <td><a href="/skyvern/" style="color:var(--navy);text-decoration:none;font-weight:600;">Skyvern</a></td>
+        <td style="font-family:var(--mono);font-weight:700;color:var(--navy);">52</td>
+        <td>Agent</td>
+        <td>US</td>
+        <td>AGPL + Cloud</td>
+        <td style="font-family:var(--mono);">14</td>
+        <td style="font-family:var(--mono);">17</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);">6</td>
+        <td style="font-family:var(--mono);">5</td>
+        <td style="font-family:var(--mono);">6</td>
+        <td style="font-family:var(--mono);font-size:.8rem;">Type II</td>
+        <td style="font-family:var(--mono);">0</td>
+      </tr>
+      <tr>
+        <td><a href="/stagehand/" style="color:var(--navy);text-decoration:none;font-weight:600;">Stagehand</a></td>
+        <td style="font-family:var(--mono);font-weight:700;color:var(--navy);">52</td>
+        <td>Framework</td>
+        <td>US</td>
+        <td>MIT</td>
+        <td style="font-family:var(--mono);">16</td>
+        <td style="font-family:var(--mono);">17</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);">5</td>
+        <td style="font-family:var(--mono);">5</td>
+        <td style="font-family:var(--mono);">5</td>
+        <td style="font-family:var(--mono);font-size:.8rem;">Type 1*</td>
+        <td style="font-family:var(--mono);">0</td>
+      </tr>
+      <tr>
+        <td><a href="/runner-h/" style="color:var(--navy);text-decoration:none;font-weight:600;">Runner H</a></td>
+        <td style="font-family:var(--mono);font-weight:700;color:var(--caution);">44</td>
+        <td>Agent</td>
+        <td>FR</td>
+        <td>Proprietary</td>
+        <td style="font-family:var(--mono);">8</td>
+        <td style="font-family:var(--mono);">20</td>
+        <td style="font-family:var(--mono);">5</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);">3</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);font-size:.8rem;">—</td>
+        <td style="font-family:var(--mono);">0</td>
+      </tr>
+      <tr>
+        <td><a href="/browser-use/" style="color:var(--navy);text-decoration:none;font-weight:600;">Browser Use</a></td>
+        <td style="font-family:var(--mono);font-weight:700;color:var(--caution);">40</td>
+        <td>Library</td>
+        <td>US</td>
+        <td>MIT</td>
+        <td style="font-family:var(--mono);">14</td>
+        <td style="font-family:var(--mono);">9</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);">3</td>
+        <td style="font-family:var(--mono);">6</td>
+        <td style="font-family:var(--mono);font-size:.8rem;">—</td>
+        <td style="font-family:var(--mono);"><span style="color:var(--risk);font-weight:600;">1</span></td>
+      </tr>
+      <tr>
+        <td><a href="/manus-ai/" style="color:var(--navy);text-decoration:none;font-weight:600;">Manus AI</a></td>
+        <td style="font-family:var(--mono);font-weight:700;color:var(--caution);">35</td>
+        <td>Agent</td>
+        <td>SG</td>
+        <td>Proprietary</td>
+        <td style="font-family:var(--mono);">8</td>
+        <td style="font-family:var(--mono);">14</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);">2</td>
+        <td style="font-family:var(--mono);">4</td>
+        <td style="font-family:var(--mono);">3</td>
+        <td style="font-family:var(--mono);font-size:.8rem;">—</td>
+        <td style="font-family:var(--mono);">0</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <section>
+    <h2>Observations from the data</h2>
+    <p>Two platforms in this group achieved the maximum R: 20/20 score — Browserbase and Runner H. Both document zero CVEs in the trailing twelve months. The gap between these two emerges in the D (Data Conduct) dimension: Browserbase publishes an explicit no-training commitment covering all browser data; Runner H&apos;s privacy policy (dated 2024.11.19) states that AI is trained on user Inputs, Actions, and Outputs, scored D: 5/15 under the framework.</p>
+    <p>Skyvern is the only browser agent in the index with standing SOC 2 Type II and HIPAA compliance. Its multi-agent architecture includes a dedicated Password Agent and credential vault integrations for 1Password, Bitwarden, and Azure Key Vault. Stagehand holds the highest V: 16/20 among browser agents, reflecting its TypeScript MIT codebase with verified signed releases and transparent commit history.</p>
+    <p>Browser Use is the only platform in this comparison with a recorded Critical CVE (CVE-2025-47241, CVSS 9.3) in the trailing twelve months. The vulnerability — allowed_domains bypass via HTTP authentication username — was patched in v0.1.45. The platform holds Y Combinator W25 membership and a $17M seed round led by Felicis Ventures.</p>
+  </section>
+
+  <section>
+    <h2>Pattern notes</h2>
+    <div class="finding-grid">
+      <div class="finding-box">
+        <div class="finding-label">Substance vs Optics</div>
+        <div class="finding-title">Browserbase</div>
+        <div class="finding-text">R: 20/20 reflects documented isolation controls (VM-per-session) and audited compliance, but T: 3/10 reflects gated Trust Center access and the absence of public SECURITY.md in the Browserbase and Stagehand GitHub repositories.</div>
+      </div>
+      <div class="finding-box">
+        <div class="finding-label">Research vs Governance</div>
+        <div class="finding-title">Runner H</div>
+        <div class="finding-text">$220M seed round, two arxiv papers, and state-of-the-art benchmarks (WebVoyager 97.1%) coexist with a privacy policy stating that AI is trained on user inputs. &quot;GDPR compliant&quot; does not imply absence of training on customer data.</div>
+      </div>
+      <div class="finding-box">
+        <div class="finding-label">Certification Leader</div>
+        <div class="finding-title">Skyvern</div>
+        <div class="finding-text">SOC 2 Type II and HIPAA compliance are both documented. Published case studies cover insurance (Geico), finance, healthcare, and government verticals. D: 4/15 reflects undocumented sub-processor list and retention periods.</div>
+      </div>
+      <div class="finding-box">
+        <div class="finding-label">Transparency Leader</div>
+        <div class="finding-title">Stagehand</div>
+        <div class="finding-text">MIT license, TypeScript, verified signed releases, 21,700+ stars. The observe() primitive provides explicit HITL action preview. 1Password Secure Agentic Autofill integration delivers HITL credential handling with JIT injection.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Methodology note</h2>
+    <p>*Stagehand inherits SOC 2 Type 1 + HIPAA from its Browserbase Inc. parent when used via Browserbase Cloud. The MIT-licensed SDK itself has no standalone certification. Browser Use holds no independent compliance certifications as of evaluation date.</p>
+    <p>VERDICT evaluates using publicly available documentation, CVE databases, and vendor-published security pages. No vendor sponsorship, no paid certification, no pre-publication sharing with vendors. Scores reflect what is documented and what is not. Framework v0.3.1.</p>
+  </section>
+
+  <a href="/" class="back">← Back to full index</a>
+
+  <footer>
+    VERDICT · Independent AI Agent Trust Index · ZinovaCreation · getverdict.fyi<br>
+    Not a certification authority. Scores are evaluations, not guarantees.
+  </footer>
+</div>
+</body>
+</html>

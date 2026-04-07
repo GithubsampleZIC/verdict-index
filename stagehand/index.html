@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stagehand — VERDICT AI Agent Trust Evaluation</title>
+<meta name="description" content="Stagehand: VERDICT score 52/85. V: 16/20 · observe() HITL Primitive. Browserbase Inc. · $67.5M · 21.7k stars.">
+<meta property="og:title" content="Stagehand — VERDICT Trust Evaluation">
+<meta property="og:description" content="VERDICT independent evaluation of Stagehand. Score 52/85.">
+<meta property="og:url" content="https://getverdict.fyi/stagehand/">
+<meta property="og:type" content="article">
+<link rel="canonical" href="https://getverdict.fyi/stagehand/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Libre+Franklin:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:#FFFFFF;--ice:#F5F6F8;--navy:#1B2A4A;--heading:#1A1A2E;--body:#4A5060;
+  --caption:#6B7280;--divider:#E2E5EB;--risk:#C4332B;--safe:#2D7A4F;--caution:#C08520;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--white);color:var(--body);font-family:'Libre Franklin',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:800px;margin:0 auto;padding:4rem 2rem;}
+.breadcrumb{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.1em;color:var(--caption);margin-bottom:1.5rem;text-transform:uppercase;}
+.breadcrumb a{color:var(--navy);text-decoration:none;}
+h1{font-family:'Source Serif 4',serif;font-size:2.5rem;font-weight:700;color:var(--heading);line-height:1.15;margin-bottom:.5rem;}
+.category{font-size:.95rem;color:var(--caption);margin-bottom:.3rem;}
+.owner{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--caption);margin-bottom:2.5rem;}
+.score-box{border:1px solid var(--divider);padding:2rem;margin-bottom:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.score-num{font-family:'Merriweather',serif;font-weight:900;font-size:4rem;color:var(--navy);line-height:1;}
+.score-denom{font-family:'Merriweather',serif;font-size:1.3rem;color:var(--caption);}
+.score-label{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--caption);margin-top:.3rem;}
+.score-right{flex:1;}
+.dim-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.5rem;}
+.dim-cell{text-align:center;padding:.7rem .3rem;background:var(--ice);border:1px solid var(--divider);}
+.dim-cell-letter{font-family:'JetBrains Mono',monospace;font-size:.85rem;font-weight:600;color:var(--navy);display:block;}
+.dim-cell-val{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--caption);display:block;margin-top:.2rem;}
+.dim-cell.inactive{opacity:.35;}
+section{margin-bottom:2.5rem;}
+section h2{font-family:'Source Serif 4',serif;font-size:1.3rem;font-weight:600;color:var(--heading);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--divider);}
+section p{font-size:.95rem;line-height:1.75;color:var(--body);}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.75rem;padding:.3rem .7rem;border:1px solid;}
+.tag-red{color:var(--risk);border-color:rgba(196,51,43,.25);background:rgba(196,51,43,.06);}
+.tag-amber{color:var(--caution);border-color:rgba(192,133,32,.25);background:rgba(192,133,32,.06);}
+.tag-safe{color:var(--safe);border-color:rgba(45,122,79,.25);background:rgba(45,122,79,.06);}
+.tag-dim{color:var(--caption);border-color:var(--divider);background:var(--ice);}
+.back{display:inline-block;margin-top:2rem;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--navy);text-decoration:none;border:1px solid var(--divider);padding:.8rem 1.5rem;transition:background .2s;}
+.back:hover{background:var(--ice);}
+footer{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--divider);font-size:.8rem;color:var(--caption);}
+@media(max-width:600px){
+  .wrap{padding:2rem 1.5rem;}
+  h1{font-size:1.8rem;}
+  .score-box{flex-direction:column;align-items:flex-start;}
+  .dim-grid{grid-template-columns:repeat(4,1fr);}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="breadcrumb"><a href="/">VERDICT</a> / Evaluations / Stagehand</div>
+  <h1>Stagehand</h1>
+  <div class="category">Browser Agent SDK · Open Source (MIT)</div>
+  <div class="owner">Browserbase Inc. · $67.5M · 21.7k stars · 2026.04.07</div>
+
+  <div class="score-box">
+    <div>
+      <div><span class="score-num">52</span><span class="score-denom">&thinsp;/&thinsp;85</span></div>
+      <div class="score-label">Layer 0 · Public Docs</div>
+    </div>
+    <div class="score-right">
+      <div class="dim-grid">
+        <div class="dim-cell"><span class="dim-cell-letter">V</span><span class="dim-cell-val">16/20</span></div>
+        <div class="dim-cell inactive"><span class="dim-cell-letter">E</span><span class="dim-cell-val">L1</span></div>
+        <div class="dim-cell"><span class="dim-cell-letter">R</span><span class="dim-cell-val">17/20</span></div>
+        <div class="dim-cell"><span class="dim-cell-letter">D</span><span class="dim-cell-val">4/15</span></div>
+        <div class="dim-cell"><span class="dim-cell-letter">I</span><span class="dim-cell-val">5/10</span></div>
+        <div class="dim-cell"><span class="dim-cell-letter">C</span><span class="dim-cell-val">5/10</span></div>
+        <div class="dim-cell"><span class="dim-cell-letter">T</span><span class="dim-cell-val">5/10</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Key Finding</h2>
+    <p>V: 16/20 — highest among browser agents. TypeScript MIT SDK by Browserbase. observe() primitive provides explicit HITL action preview. 1Password Secure Agentic Autofill integration. Zero CVEs across turbulent 2025-2026 npm supply chain.</p>
+    <div class="tags">
+      <span class="tag tag-safe">V: 16/20 · observe() HITL Primitive</span>
+      <span class="tag tag-safe">1Password Secure Agentic Autofill</span>
+      <span class="tag tag-dim">MIT · 21.7k Stars · Zero CVEs</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Methodology Note</h2>
+    <p>VERDICT evaluates using publicly available documentation, CVE databases, and vendor-published security pages. No vendor sponsorship, no paid certification, no pre-publication sharing with vendors. Scores reflect what is documented and what is not. Framework v0.3.1.</p>
+  </section>
+
+  <a href="/" class="back">← Back to full index</a>
+
+  <footer>
+    VERDICT · Independent AI Agent Trust Index · ZinovaCreation · getverdict.fyi<br>
+    Not a certification authority. Scores are evaluations, not guarantees.
+  </footer>
+</div>
+</body>
+</html>
