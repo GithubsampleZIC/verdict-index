@@ -1781,10 +1781,10 @@ footer{border-top:1px solid var(--divider);padding:3rem;max-width:1200px;margin:
 <div class="card-meta">
 <div class="platform-name">Manus AI</div>
 <div class="platform-category">Autonomous Browser Agent · Cloud</div>
-<div class="platform-owner">Butterfly Effect Pte. Ltd. · Singapore</div>
+<div class="platform-owner">Butterfly Effect (Meta) · Singapore</div>
 <div class="platform-date">Evaluated 2026.04.03 · Framework v0.3.1</div>
-<div class="key-finding">Butterfly Effect Pte. Ltd. ($500M+ funding). Sandbox VMs. Zero CVEs. Browser Operator: full browser control (Mindgard). No certifications.</div>
-<div class="incident-tags"><span class="tag tag-dim">$500M+ · Zero CVEs</span>
+<div class="key-finding">Meta-acquired ($2B+). Sandbox VMs. Zero CVEs. Browser Operator: full browser control (Mindgard). No certifications.</div>
+<div class="incident-tags"><span class="tag tag-dim">Meta · $2B+ · Zero CVEs</span>
 <span class="tag tag-red">Browser Operator: Full Control</span>
 <span class="tag tag-amber">No Certifications</span></div>
 </div>
