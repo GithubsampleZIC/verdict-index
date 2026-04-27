@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
-<title>AI Coding Agent Security Comparison — Devin vs Cursor vs Windsurf vs Copilot — VERDICT</title>
-<meta name="description" content="Independent security comparison of 6 AI coding agents: Devin (62/85), Windsurf (58), GitHub Copilot (57), Replit (48), Cursor (47), OpenHands (43). Dimension-by-dimension analysis.">
+<title>AI Coding Agent Security Comparison — Gemini vs Devin vs Copilot vs aider vs Cline — VERDICT</title>
+<meta name="description" content="Independent security comparison of 9 AI coding agents: Gemini Code Assist (67/85), Devin (62), Windsurf (58), GitHub Copilot (57), aider (52), Replit (48), Cursor (47), OpenHands (43), Cline (50). Dimension-by-dimension analysis.">
 <meta property="og:title" content="AI Coding Agent Security Comparison — VERDICT">
 <meta property="og:url" content="https://getverdict.fyi/compare/coding-agents/">
 <link rel="canonical" href="https://getverdict.fyi/compare/coding-agents/">
@@ -43,7 +43,7 @@
 .tag-red{border-color:rgba(196,51,43,.3);color:var(--risk);background:var(--risk-bg);}
 .tag-amber{border-color:rgba(192,133,32,.3);color:var(--caution);background:var(--caution-bg);}
 .tag-dim{border-color:var(--divider);color:var(--caption);background:var(--ice);}
-@media(max-width:700px){.rank-row{grid-template-columns:28px 1fr 45px;}.cmp-table{font-size:.7rem;}}
+@media(max-width:700px){.rank-row{grid-template-columns:28px 1fr 45px;}.cmp-table{font-size:.65rem;}.cmp-table td,.cmp-table th{padding:.35rem .25rem;}}
 </style>
 </head>
 <body>
@@ -51,29 +51,35 @@
 <div class="wrap">
   <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; <a href="/rankings/">Rankings</a> &rsaquo; Coding Agents</div>
   <h1>AI coding agents compared</h1>
-  <div class="subtitle">Six AI coding agents evaluated on security, privacy, and compliance. All scores are Layer 0 (public documentation only), Framework v0.3.1. Updated April 2026.</div>
+  <div class="subtitle">Nine AI coding agents evaluated on security, privacy, and compliance. All scores are Layer 0 (public documentation only), Framework v0.3.1. Updated April 2026.</div>
 
   <table class="cmp-table">
     <thead><tr>
       <th>Dimension</th><th>Max</th>
+      <th class="score-col"><a href="/gemini-code-assist/">Gemini</a></th>
       <th class="score-col"><a href="/devin/">Devin</a></th>
       <th class="score-col"><a href="/windsurf/">Windsurf</a></th>
       <th class="score-col"><a href="/github-copilot/">Copilot</a></th>
+      <th class="score-col"><a href="/aider/">aider</a></th>
+      <th class="score-col"><a href="/cline/">Cline</a></th>
       <th class="score-col"><a href="/replit/">Replit</a></th>
       <th class="score-col"><a href="/cursor/">Cursor</a></th>
       <th class="score-col"><a href="/openhands/">OpenHands</a></th>
     </tr></thead>
     <tbody>
-      <tr><td class="dim-label">V</td><td>20</td><td class="score-cell">11</td><td class="score-cell">10</td><td class="score-cell">12</td><td class="score-cell">10</td><td class="score-cell">10</td><td class="score-cell high">13</td></tr>
-      <tr><td class="dim-label">R</td><td>20</td><td class="score-cell high">17</td><td class="score-cell">14</td><td class="score-cell high">17</td><td class="score-cell">14</td><td class="score-cell low">8</td><td class="score-cell">12</td></tr>
-      <tr><td class="dim-label">D</td><td>15</td><td class="score-cell high">12</td><td class="score-cell high">12</td><td class="score-cell">7</td><td class="score-cell">6</td><td class="score-cell high">11</td><td class="score-cell low">1</td></tr>
-      <tr><td class="dim-label">I</td><td>10</td><td class="score-cell high">7</td><td class="score-cell high">7</td><td class="score-cell high">7</td><td class="score-cell">5</td><td class="score-cell high">7</td><td class="score-cell">6</td></tr>
-      <tr><td class="dim-label">C</td><td>10</td><td class="score-cell high">7</td><td class="score-cell">6</td><td class="score-cell">5</td><td class="score-cell">5</td><td class="score-cell">5</td><td class="score-cell">4</td></tr>
-      <tr><td class="dim-label">T</td><td>10</td><td class="score-cell high">8</td><td class="score-cell high">9</td><td class="score-cell high">9</td><td class="score-cell high">8</td><td class="score-cell">6</td><td class="score-cell high">7</td></tr>
+      <tr><td class="dim-label">V</td><td>20</td><td class="score-cell high">17</td><td class="score-cell">11</td><td class="score-cell">10</td><td class="score-cell">12</td><td class="score-cell high">14</td><td class="score-cell high">14</td><td class="score-cell">10</td><td class="score-cell">10</td><td class="score-cell high">13</td></tr>
+      <tr><td class="dim-label">R</td><td>20</td><td class="score-cell high">17</td><td class="score-cell high">17</td><td class="score-cell">14</td><td class="score-cell high">17</td><td class="score-cell high">17</td><td class="score-cell low">5</td><td class="score-cell">14</td><td class="score-cell low">8</td><td class="score-cell">12</td></tr>
+      <tr><td class="dim-label">D</td><td>15</td><td class="score-cell high">11</td><td class="score-cell high">12</td><td class="score-cell high">12</td><td class="score-cell">7</td><td class="score-cell low">5</td><td class="score-cell">8</td><td class="score-cell">6</td><td class="score-cell high">11</td><td class="score-cell low">1</td></tr>
+      <tr><td class="dim-label">I</td><td>10</td><td class="score-cell">6</td><td class="score-cell high">7</td><td class="score-cell high">7</td><td class="score-cell high">7</td><td class="score-cell high">8</td><td class="score-cell high">10</td><td class="score-cell">5</td><td class="score-cell high">7</td><td class="score-cell">6</td></tr>
+      <tr><td class="dim-label">C</td><td>10</td><td class="score-cell">6</td><td class="score-cell high">7</td><td class="score-cell">6</td><td class="score-cell">5</td><td class="score-cell">5</td><td class="score-cell">6</td><td class="score-cell">5</td><td class="score-cell">5</td><td class="score-cell">4</td></tr>
+      <tr><td class="dim-label">T</td><td>10</td><td class="score-cell high">10</td><td class="score-cell high">8</td><td class="score-cell high">9</td><td class="score-cell high">9</td><td class="score-cell low">3</td><td class="score-cell high">7</td><td class="score-cell high">8</td><td class="score-cell">6</td><td class="score-cell high">7</td></tr>
       <tr style="border-top:2px solid var(--navy)"><td class="dim-label">Total</td><td>85</td>
+        <td class="score-cell"><span class="cmp-total">67</span></td>
         <td class="score-cell"><span class="cmp-total">62</span></td>
         <td class="score-cell"><span class="cmp-total">58</span></td>
         <td class="score-cell"><span class="cmp-total">57</span></td>
+        <td class="score-cell"><span class="cmp-total">52</span></td>
+        <td class="score-cell"><span class="cmp-total">50</span></td>
         <td class="score-cell"><span class="cmp-total">48</span></td>
         <td class="score-cell"><span class="cmp-total">47</span></td>
         <td class="score-cell"><span class="cmp-total">43</span></td>
@@ -83,22 +89,25 @@
 
   <h2>Key differentiators</h2>
   <table class="cmp-table">
-    <thead><tr><th>Feature</th><th>Devin</th><th>Windsurf</th><th>Copilot</th><th>Replit</th><th>Cursor</th><th>OpenHands</th></tr></thead>
+    <thead><tr><th>Feature</th><th>Gemini</th><th>Devin</th><th>Windsurf</th><th>Copilot</th><th>aider</th><th>Cline</th><th>Replit</th><th>Cursor</th><th>OpenHands</th></tr></thead>
     <tbody>
-      <tr><td class="dim-label">Architecture</td><td>Cloud SaaS</td><td>Desktop IDE</td><td>IDE Extension</td><td>Cloud IDE</td><td>Desktop IDE</td><td>OSS Self-Host</td></tr>
-      <tr><td class="dim-label">SOC 2 Type II</td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes (0 exc.)</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-dim">No</span></td></tr>
-      <tr><td class="dim-label">FedRAMP</td><td><span class="tag tag-safe">Aligned</span></td><td><span class="tag tag-safe">High</span></td><td><span class="tag tag-safe">Via Azure</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td></tr>
-      <tr><td class="dim-label">Training default</td><td><span class="tag tag-safe">No (opt-in)</span></td><td><span class="tag tag-safe">ZDR default</span></td><td><span class="tag tag-red">Opt-in (Apr 26)</span></td><td><span class="tag tag-amber">Public=yes</span></td><td><span class="tag tag-amber">Privacy Mode</span></td><td><span class="tag tag-red">D:1/15</span></td></tr>
-      <tr><td class="dim-label">Self-hosted</td><td><span class="tag tag-safe">VPC</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-safe">Yes (OSS)</span></td></tr>
-      <tr><td class="dim-label">CVEs (12mo)</td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-red">3 (MCP)</span></td><td><span class="tag tag-amber">1</span></td></tr>
-      <tr><td class="dim-label">IP Indemnity</td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-safe">Enterprise</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td></tr>
-      <tr><td class="dim-label">Price</td><td>$500/mo</td><td>$15-60/mo</td><td>$10-39/mo</td><td>$20-60/mo</td><td>$20/mo</td><td>Free (OSS)</td></tr>
+      <tr><td class="dim-label">Architecture</td><td>Cloud SaaS</td><td>Cloud SaaS</td><td>Desktop IDE</td><td>IDE Extension</td><td>Terminal CLI</td><td>IDE Extension (BYOK)</td><td>Cloud IDE</td><td>Desktop IDE</td><td>OSS Self-Host</td></tr>
+      <tr><td class="dim-label">License</td><td><span class="tag tag-dim">Proprietary</span></td><td><span class="tag tag-dim">Proprietary</span></td><td><span class="tag tag-dim">Proprietary</span></td><td><span class="tag tag-dim">Proprietary</span></td><td><span class="tag tag-safe">Apache 2.0</span></td><td><span class="tag tag-safe">Apache 2.0</span></td><td><span class="tag tag-dim">Proprietary</span></td><td><span class="tag tag-dim">Proprietary</span></td><td><span class="tag tag-safe">MIT</span></td></tr>
+      <tr><td class="dim-label">SOC 2 Type II</td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-safe">Yes (0 exc.)</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-dim">No</span></td></tr>
+      <tr><td class="dim-label">FedRAMP</td><td><span class="tag tag-safe">High</span></td><td><span class="tag tag-safe">Aligned</span></td><td><span class="tag tag-safe">High</span></td><td><span class="tag tag-safe">Via Azure</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td></tr>
+      <tr><td class="dim-label">ISO 42001</td><td><span class="tag tag-safe">Yes (May 2025)</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td></tr>
+      <tr><td class="dim-label">Training default</td><td><span class="tag tag-amber">Tier-strat (Free=ON)</span></td><td><span class="tag tag-safe">No (opt-in)</span></td><td><span class="tag tag-safe">ZDR default</span></td><td><span class="tag tag-red">Opt-in (Apr 26)</span></td><td><span class="tag tag-safe">BYOK (no Cline-side)</span></td><td><span class="tag tag-safe">BYOK (no Cline-side)</span></td><td><span class="tag tag-amber">Public=yes</span></td><td><span class="tag tag-amber">Privacy Mode</span></td><td><span class="tag tag-red">D:1/15</span></td></tr>
+      <tr><td class="dim-label">Self-hosted</td><td><span class="tag tag-safe">VPC SC + CMEK</span></td><td><span class="tag tag-safe">VPC</span></td><td><span class="tag tag-safe">Yes</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-safe">Local-only</span></td><td><span class="tag tag-safe">Client-side</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-safe">Yes (OSS)</span></td></tr>
+      <tr><td class="dim-label">CVEs (12mo)</td><td><span class="tag tag-safe">0 (Code Assist)</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-amber">GHSA + 4 Mindgard</span></td><td><span class="tag tag-safe">0</span></td><td><span class="tag tag-red">3 (MCP)</span></td><td><span class="tag tag-amber">1</span></td></tr>
+      <tr><td class="dim-label">Supply chain</td><td><span class="tag tag-safe">Clean</span></td><td><span class="tag tag-safe">Clean</span></td><td><span class="tag tag-safe">Clean</span></td><td><span class="tag tag-safe">Clean</span></td><td><span class="tag tag-safe">litellm pinning</span></td><td><span class="tag tag-red">Clinejection (~8h)</span></td><td><span class="tag tag-safe">Clean</span></td><td><span class="tag tag-safe">Clean</span></td><td><span class="tag tag-safe">Clean</span></td></tr>
+      <tr><td class="dim-label">IP Indemnity</td><td><span class="tag tag-safe">Std/Ent</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-safe">Enterprise</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td><td><span class="tag tag-dim">No</span></td></tr>
+      <tr><td class="dim-label">Price</td><td>Free / $22.80 / $54</td><td>$500/mo</td><td>$15-60/mo</td><td>$10-39/mo</td><td>BYOK (free OSS)</td><td>BYOK (free OSS)</td><td>$20-60/mo</td><td>$20/mo</td><td>Free (OSS)</td></tr>
     </tbody>
   </table>
 
-  <div class="insight-box">The 15-point gap between Devin (62) and Cursor (47) is driven primarily by R dimension (17 vs 8) and C dimension (7 vs 5). Cursor's three MCP CVEs represent a structural trust model pattern. Windsurf outscores Cursor by 11 points despite both being VS Code forks — FedRAMP High accreditation, HIPAA readiness, and default zero-data-retention account for the difference.</div>
+  <div class="insight-box">Gemini Code Assist (67) leads the cluster on certification breadth (only AI coding agent in VERDICT with ISO 42001) and overall composite, but its tier-stratified training policy means free-tier Individuals users default to data collection. The 17-point gap between Gemini and Cline (50) is concentrated in V (17 vs 14), D (11 vs 8), and T (10 vs 7) — Cline's HITL=10/10 leads on Identity & Control but supply-chain incident exposure (Clinejection) and limited certifications constrain the composite. aider (52) achieves the cleanest CVE history in the cluster (0 in 12 months) but trails on transparency artifacts (no SECURITY.md, no SOC 2). Three architectural archetypes are visible: enterprise SaaS (Gemini, Devin, Replit), desktop/IDE (Windsurf, Copilot, Cursor), and OSS local-first (aider, Cline, OpenHands).</div>
 
-  <div class="cta-bar"><a href="/rankings/" class="cta-link">Full Rankings (50 Platforms)</a><a href="/compare/ai-app-builders/" class="cta-link">AI App Builders Compared</a><a href="/methodology/" class="cta-link">Methodology</a></div>
+  <div class="cta-bar"><a href="/rankings/" class="cta-link">Full Rankings (58 Platforms)</a><a href="/compare/ai-app-builders/" class="cta-link">AI App Builders Compared</a><a href="/methodology/" class="cta-link">Methodology</a></div>
 </div>
 <footer><div class="footer-note">VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a><br>Evaluation tooling uses Claude (Anthropic). Bias disclosures in full reports.</div></footer>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4dbc22ec4e18434e9bdbc01d644490c0"}'></script>

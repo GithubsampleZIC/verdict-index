@@ -320,4 +320,19 @@
     <lastmod>2026-04-07</lastmod>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://getverdict.fyi/gemini-code-assist/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/aider/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://getverdict.fyi/cline/</loc>
+    <lastmod>2026-04-27</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
