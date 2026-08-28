@@ -22,16 +22,15 @@
 <div class="wrap">
   <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; AutoGPT</div>
   <h1>AutoGPT</h1>
-  <div class="meta">Autonomous AI Agent Platform · Source-Available (Polyform Shield + MIT)</div>
+  <div class="meta">Autonomous AI Agent &middot; Source-Available</div>
   <div class="meta">Evaluated 2026.03.31 &middot; Framework v0.3.1</div>
-  <div class="meta-owner">Determinist Ltd · United Kingdom</div>
-  <div class="score-hero"><div><span class="score-big">36</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #50 of 64 platforms evaluated<br>Framework v0.3.1</div></div>
+  <div class="meta-owner">Determinist Ltd (AutoGPT)</div>
+  <div class="score-hero"><div><span class="score-big">36</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #58 of 69 platforms evaluated<br>Framework v0.3.1</div></div>
   <div class="finding">Highest transparency score in the VERDICT index (T: 10/10). Six self-published security advisories with patches. Recurring SSRF pattern (3/6 advisories). Cross-user data leak via WebSockets (patched). 183k GitHub stars. $12M funded.</div>
-  <div class="tags"><span class="tag tag-safe">T: 10/10 · Index Highest</span>
-    <span class="tag tag-red">6 Advisories · 2 Critical SSRF</span>
+  <div class="tags"><span class="tag tag-safe">T: 10/10 &middot; Index Highest</span>
+    <span class="tag tag-red">6 Advisories &middot; 2 Critical</span>
     <span class="tag tag-red">Cross-User Data Leak</span>
-    <span class="tag tag-dim">183k Stars · $12M Funded</span>
-    <span class="tag tag-amber">Polyform Shield License</span></div>
+    <span class="tag tag-amber">CVE Count Unrecorded</span></div>
   <div class="radar-section">
     <div class="radar-wrap"><svg class="radar-svg" viewBox="0 0 240 240">
         <polygon class="radar-ring" points="120,102 134.1,108.8 137.5,124 127.8,136.2 112.2,136.2 102.5,124 105.9,108.8"/><polygon class="radar-ring" points="120,84 148.1,97.6 155.1,128 135.6,152.4 104.4,152.4 84.9,128 91.9,97.6"/><polygon class="radar-ring" points="120,66 162.2,86.3 172.6,132 143.4,168.7 96.6,168.7 67.4,132 77.8,86.3"/><polygon class="radar-ring" points="120,48 176.3,75.1 190.2,136 151.2,184.9 88.8,184.9 49.8,136 63.7,75.1"/>
@@ -39,9 +38,9 @@
         <g class="radar-data"><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,84.0 120.0,120.0 134.0,123.2 130.4,141.6 110.6,139.5 91.9,126.4 63.7,75.1"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,84.0 120.0,120.0 134.0,123.2 130.4,141.6 110.6,139.5 91.9,126.4 63.7,75.1"/></g>
         <text class="radar-label" x="120" y="22" text-anchor="middle">V</text><text class="radar-label radar-label-inactive" x="193" y="61" text-anchor="start">E</text><text class="radar-label" x="212" y="141" text-anchor="start">R</text><text class="radar-label" x="161" y="205" text-anchor="start">D</text><text class="radar-label" x="79" y="205" text-anchor="end">I</text><text class="radar-label" x="28" y="141" text-anchor="end">C</text><text class="radar-label" x="47" y="61" text-anchor="end">T</text>
     </svg></div>
-    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":10,"m":20},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":4,"m":20,"low":true},{"l":"D","s":5,"m":15},{"l":"I","s":3,"m":10,"low":true},{"l":"C","s":4,"m":10},{"l":"T","s":10,"m":10,"high":true}]'></div>
+    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":10,"m":20},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":4,"m":20,"low":true},{"l":"D","s":5,"m":15},{"l":"I","s":3,"m":10},{"l":"C","s":4,"m":10},{"l":"T","s":10,"m":10,"high":true}]'></div>
   </div>
-  <div class="cta-bar"><a href="/" class="cta-link">View All 50 Evaluations</a><a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a></div>
+  <div class="cta-bar"><a href="/" class="cta-link">View All 69 Evaluations</a><a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a></div>
 </div>
 <footer><div class="footer-note">VERDICT is not a certification authority. Scores are evaluations, not guarantees.<br>VERDICT by ZinovaCreation &middot; Est. 2026 &middot; Japan &middot; <a href="/">getverdict.fyi</a><br>Evaluation tooling uses Claude (Anthropic). Bias disclosures in full reports.</div></footer>
 <script>document.querySelectorAll('.dim-list').forEach(list=>{const dims=JSON.parse(list.dataset.dims);dims.forEach(d=>{const pct=d.inactive?100:Math.round((d.s/d.m)*100);const isLow=!d.inactive&&pct<30;const isHigh=!d.inactive&&pct>=65;const fillClass=d.inactive?'fill-inactive':isLow?'fill-low':'';const letterClass=d.inactive?'dim-inactive':'';const valClass=d.inactive?'val-inactive':isHigh?'val-high':'';const valText=d.inactive?'L1':d.s+'/'+d.m;list.innerHTML+='<div class="dim-row"><span class="dim-letter '+letterClass+'">'+d.l+'</span><div class="dim-bar-track"><div class="dim-bar-fill '+fillClass+'" style="width:'+(d.inactive?'100':pct)+'%"></div></div><span class="dim-val '+valClass+'">'+valText+'</span></div>';});});</script>

@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LangGraph Security Review — VERDICT Score: 46/85</title>
-<meta name="description" content="Independent security evaluation of LangGraph by LangChain. Score: 46/85. I:8/10 best HITL. T:9/10. CVSS 9.3 Critical. 3 CVEs (structural data validation pattern). SOC 2 Type II. Framework v0.3.1.">
-<meta property="og:title" content="LangGraph Security Review — VERDICT Score: 46/85">
-<meta property="og:description" content="Independent security evaluation of LangGraph by LangChain. Score: 46/85. I:8/10 best HITL. T:9/10. CVSS 9.3 Critical. 3 CVEs (structural data validation pattern). SOC 2 Type II. Framework v0.3.1.">
-<meta property="og:url" content="https://getverdict.fyi/langgraph/">
+<title>Arize AI Security Review — VERDICT Score: 51/85</title>
+<meta name="description" content="Independent VERDICT v0.3.1 evaluation of Arize AI (Arize AX + Arize Phoenix), an LLM observability platform. Score: 51/85 (Tier B). Strong supply-chain resilience and access controls; the principal gap is Data Conduct disclosure, and the Phoenix tier is source-available under the Elastic License 2.0 rather than OSI-approved open source.">
+<meta property="og:title" content="Arize AI Security Review — VERDICT Score: 51/85">
+<meta property="og:description" content="VERDICT scores Arize AI 51/85 (Tier B) on its 85-point AI agent trust framework — strong supply-chain resilience and access controls, with the principal gap in published data-governance commitments.">
+<meta property="og:url" content="https://getverdict.fyi/arize-ai/">
 <meta property="og:type" content="article">
-<link rel="canonical" href="https://getverdict.fyi/langgraph/">
+<link rel="canonical" href="https://getverdict.fyi/arize-ai/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -20,24 +20,27 @@
 <body>
 <header><a href="/" class="logo"><span class="logo-mark">VERDICT</span><span class="logo-sub">AI Agent Trust Index</span></a><a href="/" class="back">&larr; All Evaluations</a></header>
 <div class="wrap">
-  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; LangGraph</div>
-  <h1>LangGraph</h1>
-  <div class="meta">Agent Orchestration &middot; OSS (MIT)</div>
-  <div class="meta">Evaluated 2026.04.04 &middot; Framework v0.3.1</div>
-  <div class="meta-owner">LangChain Inc.</div>
-  <div class="score-hero"><div><span class="score-big">46</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #37 of 69 platforms evaluated<br>Framework v0.3.1</div></div>
-  <div class="finding">Best HITL in index (I:8/10): interrupt/breakpoint/persistence/time-travel. T:9/10 with exemplary CVE disclosure. 3 CVEs including CVSS 9.3 Critical deserialization. Structural data validation pattern across serialization/storage/loading. SOC 2 Type II.</div>
-  <div class="tags"><span class="tag tag-safe">I: 8/10 &middot; Best HITL</span>
-    <span class="tag tag-safe">T: 9/10 &middot; SOC 2 II</span>
-    <span class="tag tag-red">CVSS 9.3 &middot; 3 CVEs</span></div>
+  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; Arize AI</div>
+  <h1>Arize AI</h1>
+  <div class="meta">LLM Observability &middot; AI Evaluation &middot; Model Monitoring (Cloud + OSS dual-tier)</div>
+  <div class="meta">Evaluated 2026.05.15 &middot; Framework v0.3.1</div>
+  <div class="meta-owner">Arize AI, Inc. &middot; Delaware C-corp &middot; Berkeley, California</div>
+  <div class="score-hero"><div><span class="score-big">51</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #28 of 69 platforms evaluated<br>Framework v0.3.1</div></div>
+  <div class="finding">Arize AI scores 51/85 (Tier B) at Layer 0 under VERDICT v0.3.1. Its strongest dimensions are Resilience (17/20) and Identity &amp; Control (8/10): public sources show no CVEs in the trailing twelve months, arize-phoenix releases are published via PyPI Trusted Publishing with verified attestations and GPG-signed GitHub Releases, and the platform documents SAML SSO, RBAC with custom roles, three-tier audit logging via GraphQL, and human-in-the-loop evaluation by design. Compliance posture is well-documented (SOC 2 Type II, ISO/IEC 27001, HIPAA, PCI DSS 4.0, GDPR). The lowest dimension is Data Conduct (3/15): the Terms of Service grant Arize a broad license to use Customer Data to "enhance and improve" the Application and assign ownership of aggregated data to Arize, with no explicit statement that customer trace data is excluded from training Arize's evaluator models, and at evaluation date no publicly dated subprocessor list, public DPA, or AX-platform retention schedule was located. Arize positions its Phoenix tier as open source, but it is licensed under the Elastic License 2.0 &mdash; a source-available license carrying a hosted-competing-service restriction rather than OSI-approved open source.</div>
+  <div class="tags"><span class="tag tag-safe">Zero CVEs (trailing 12 mo)</span>
+    <span class="tag tag-safe">Signed releases (Trusted Publishing + GPG)</span>
+    <span class="tag tag-safe">RBAC + three-tier audit logging</span>
+    <span class="tag tag-amber">Phoenix is ELv2, not OSI open source</span>
+    <span class="tag tag-amber">Data governance gated</span>
+    <span class="tag tag-amber">No explicit no-training commitment</span></div>
   <div class="radar-section">
     <div class="radar-wrap"><svg class="radar-svg" viewBox="0 0 240 240">
         <polygon class="radar-ring" points="120,102 134.1,108.8 137.5,124 127.8,136.2 112.2,136.2 102.5,124 105.9,108.8"/><polygon class="radar-ring" points="120,84 148.1,97.6 155.1,128 135.6,152.4 104.4,152.4 84.9,128 91.9,97.6"/><polygon class="radar-ring" points="120,66 162.2,86.3 172.6,132 143.4,168.7 96.6,168.7 67.4,132 77.8,86.3"/><polygon class="radar-ring" points="120,48 176.3,75.1 190.2,136 151.2,184.9 88.8,184.9 49.8,136 63.7,75.1"/>
         <line class="radar-axis" x1="120" y1="120" x2="120" y2="48"/><line class="radar-axis radar-axis-inactive" x1="120" y1="120" x2="176.3" y2="75.1"/><line class="radar-axis" x1="120" y1="120" x2="190.2" y2="136"/><line class="radar-axis" x1="120" y1="120" x2="151.2" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="88.8" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="49.8" y2="136"/><line class="radar-axis" x1="120" y1="120" x2="63.7" y2="75.1"/>
-        <g class="radar-data"><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,73.2 120.0,120.0 134.0,123.2 134.6,150.3 95.0,171.9 84.9,128.0 69.3,79.6"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,73.2 120.0,120.0 134.0,123.2 134.6,150.3 95.0,171.9 84.9,128.0 69.3,79.6"/></g>
+        <g class="radar-data"><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,73.2 120.0,120.0 179.7,133.6 126.2,133.0 95.0,171.9 91.9,126.4 86.2,93.1"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,73.2 120.0,120.0 179.7,133.6 126.2,133.0 95.0,171.9 91.9,126.4 86.2,93.1"/></g>
         <text class="radar-label" x="120" y="22" text-anchor="middle">V</text><text class="radar-label radar-label-inactive" x="193" y="61" text-anchor="start">E</text><text class="radar-label" x="212" y="141" text-anchor="start">R</text><text class="radar-label" x="161" y="205" text-anchor="start">D</text><text class="radar-label" x="79" y="205" text-anchor="end">I</text><text class="radar-label" x="28" y="141" text-anchor="end">C</text><text class="radar-label" x="47" y="61" text-anchor="end">T</text>
     </svg></div>
-    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":13,"m":20,"high":true},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":4,"m":20,"low":true},{"l":"D","s":7,"m":15},{"l":"I","s":8,"m":10,"high":true},{"l":"C","s":5,"m":10},{"l":"T","s":9,"m":10,"high":true}]'></div>
+    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":13,"m":20,"high":true},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":17,"m":20,"high":true},{"l":"D","s":3,"m":15,"low":true},{"l":"I","s":8,"m":10,"high":true},{"l":"C","s":4,"m":10},{"l":"T","s":6,"m":10}]'></div>
   </div>
   <div class="cta-bar"><a href="/" class="cta-link">View All 69 Evaluations</a><a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a></div>
 </div>

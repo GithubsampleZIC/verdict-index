@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LangGraph Security Review — VERDICT Score: 46/85</title>
-<meta name="description" content="Independent security evaluation of LangGraph by LangChain. Score: 46/85. I:8/10 best HITL. T:9/10. CVSS 9.3 Critical. 3 CVEs (structural data validation pattern). SOC 2 Type II. Framework v0.3.1.">
-<meta property="og:title" content="LangGraph Security Review — VERDICT Score: 46/85">
-<meta property="og:description" content="Independent security evaluation of LangGraph by LangChain. Score: 46/85. I:8/10 best HITL. T:9/10. CVSS 9.3 Critical. 3 CVEs (structural data validation pattern). SOC 2 Type II. Framework v0.3.1.">
-<meta property="og:url" content="https://getverdict.fyi/langgraph/">
+<title>Weaviate Security Review — VERDICT Score: 62/85</title>
+<meta name="description" content="Weaviate (Vector Database) scores 62/85, Tier A, under VERDICT v0.3.1 Layer 0. Strengths: a BSD 3-Clause open-source core, a dated DPA (v1.4) stating no model training without customer instruction, ISO 27001:2022 plus SOC 2 Type II, and coordinated patching of two path-traversal CVEs. Concerns: default-on OSS telemetry with cloud-metadata sharing, in-process generative modules without a documented egress allowlist, and trust-portal-gated audit evidence.">
+<meta property="og:title" content="Weaviate Security Review — VERDICT Score: 62/85">
+<meta property="og:description" content="Weaviate scores 62/85 (Tier A) on VERDICT v0.3.1 Layer 0: strong open-source verifiability and data conduct, with concerns in default-on telemetry, in-process module egress, and gated audit evidence.">
+<meta property="og:url" content="https://getverdict.fyi/weaviate/">
 <meta property="og:type" content="article">
-<link rel="canonical" href="https://getverdict.fyi/langgraph/">
+<link rel="canonical" href="https://getverdict.fyi/weaviate/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;400;500;600;700&family=Libre+Franklin:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
@@ -20,24 +20,29 @@
 <body>
 <header><a href="/" class="logo"><span class="logo-mark">VERDICT</span><span class="logo-sub">AI Agent Trust Index</span></a><a href="/" class="back">&larr; All Evaluations</a></header>
 <div class="wrap">
-  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; LangGraph</div>
-  <h1>LangGraph</h1>
-  <div class="meta">Agent Orchestration &middot; OSS (MIT)</div>
-  <div class="meta">Evaluated 2026.04.04 &middot; Framework v0.3.1</div>
-  <div class="meta-owner">LangChain Inc.</div>
-  <div class="score-hero"><div><span class="score-big">46</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #37 of 69 platforms evaluated<br>Framework v0.3.1</div></div>
-  <div class="finding">Best HITL in index (I:8/10): interrupt/breakpoint/persistence/time-travel. T:9/10 with exemplary CVE disclosure. 3 CVEs including CVSS 9.3 Critical deserialization. Structural data validation pattern across serialization/storage/loading. SOC 2 Type II.</div>
-  <div class="tags"><span class="tag tag-safe">I: 8/10 &middot; Best HITL</span>
-    <span class="tag tag-safe">T: 9/10 &middot; SOC 2 II</span>
-    <span class="tag tag-red">CVSS 9.3 &middot; 3 CVEs</span></div>
+  <div class="breadcrumb"><a href="/">VERDICT</a> &rsaquo; Evaluations &rsaquo; Weaviate</div>
+  <h1>Weaviate</h1>
+  <div class="meta">Vector Database &middot; Open Source (BSD 3-Clause) &middot; Self-Hosted &amp; Managed Cloud &middot; Bring Your Own Cloud &middot; Retrieval Infrastructure</div>
+  <div class="meta">Evaluated 2026.05.15 &middot; Framework v0.3.1</div>
+  <div class="meta-owner">Weaviate B.V. (Amsterdam, NL) / Weaviate, LLC (US) &middot; Independent, venture-backed &middot; Series B, 2023, Index Ventures lead &middot; No parent company, no acquisition history</div>
+  <div class="score-hero"><div><span class="score-big">62</span><span class="score-denom">&thinsp;/&thinsp;85</span></div><div class="score-meta">Layer 0 &middot; Public Documentation Only<br>Rank #6 of 69 platforms evaluated<br>Framework v0.3.1</div></div>
+  <div class="finding">Weaviate scores 62/85 (Tier A) under VERDICT v0.3.1 Layer 0, evaluated at Database 1.33.x / 1.34.0. Verifiability and data conduct lead: a BSD 3-Clause open-source core, a dual-entity legal structure (Weaviate B.V. in Amsterdam and Weaviate, LLC in the US) published with jurisdictional clarity, a versioned and dated Data Processing Agreement (v1.4, February 2026) whose §2.2 states Personal Data is not processed for model training without documented customer instruction, a publicly dated sub-processor list (October 2025), and ISO 27001:2022 certification (September 2025) alongside existing SOC 2 Type II. Two path-traversal CVEs &mdash; CVE-2025-67818 (Backup ZipSlip, CVSS v4.0 8.7) and CVE-2025-67819 (Shard Movement, CVSS 4.9) &mdash; were reported through Weaviate's Vulnerability Disclosure Program by an external researcher and patched in coordinated release across four supported minor branches (1.30.20 / 1.31.19 / 1.32.16 / 1.33.4) in November–December 2025. Recorded concerns cluster in identity-control and containment: OSS telemetry is on by default with cloud-metadata shared with hyperscalers for commercial lead identification (opt-out via DISABLE_TELEMETRY=true), generative modules execute in the main process without a documented egress allowlist, human-in-the-loop is not stated as a default-enforced control for the Query Agent and Transformation Agent surfaces, SOC 2 and ISO 27001 evidence is gated behind the trust portal, and no AI-specific safety framework (NIST AI RMF, ISO/IEC 42001) is referenced in public documentation.</div>
+  <div class="tags"><span class="tag tag-safe">BSD 3-Clause open-source core</span>
+    <span class="tag tag-safe">ISO 27001:2022 + SOC 2 Type II</span>
+    <span class="tag tag-safe">No model training without instruction</span>
+    <span class="tag tag-safe">Coordinated CVE disclosure, four branches patched</span>
+    <span class="tag tag-amber">OSS telemetry on by default</span>
+    <span class="tag tag-amber">In-process module egress, no allowlist</span>
+    <span class="tag tag-amber">Audit evidence trust-portal gated</span>
+    <span class="tag tag-dim">Two path-traversal CVEs (CWE-22), patched</span></div>
   <div class="radar-section">
     <div class="radar-wrap"><svg class="radar-svg" viewBox="0 0 240 240">
         <polygon class="radar-ring" points="120,102 134.1,108.8 137.5,124 127.8,136.2 112.2,136.2 102.5,124 105.9,108.8"/><polygon class="radar-ring" points="120,84 148.1,97.6 155.1,128 135.6,152.4 104.4,152.4 84.9,128 91.9,97.6"/><polygon class="radar-ring" points="120,66 162.2,86.3 172.6,132 143.4,168.7 96.6,168.7 67.4,132 77.8,86.3"/><polygon class="radar-ring" points="120,48 176.3,75.1 190.2,136 151.2,184.9 88.8,184.9 49.8,136 63.7,75.1"/>
         <line class="radar-axis" x1="120" y1="120" x2="120" y2="48"/><line class="radar-axis radar-axis-inactive" x1="120" y1="120" x2="176.3" y2="75.1"/><line class="radar-axis" x1="120" y1="120" x2="190.2" y2="136"/><line class="radar-axis" x1="120" y1="120" x2="151.2" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="88.8" y2="184.9"/><line class="radar-axis" x1="120" y1="120" x2="49.8" y2="136"/><line class="radar-axis" x1="120" y1="120" x2="63.7" y2="75.1"/>
-        <g class="radar-data"><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,73.2 120.0,120.0 134.0,123.2 134.6,150.3 95.0,171.9 84.9,128.0 69.3,79.6"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,73.2 120.0,120.0 134.0,123.2 134.6,150.3 95.0,171.9 84.9,128.0 69.3,79.6"/></g>
+        <g class="radar-data"><polygon class="radar-poly-fill" fill="#1B2A4A" points="120.0,62.4 120.0,120.0 169.1,131.2 147.1,176.2 101.3,158.9 77.9,129.6 80.6,88.6"/><polygon class="radar-poly-stroke" stroke="#1B2A4A" points="120.0,62.4 120.0,120.0 169.1,131.2 147.1,176.2 101.3,158.9 77.9,129.6 80.6,88.6"/></g>
         <text class="radar-label" x="120" y="22" text-anchor="middle">V</text><text class="radar-label radar-label-inactive" x="193" y="61" text-anchor="start">E</text><text class="radar-label" x="212" y="141" text-anchor="start">R</text><text class="radar-label" x="161" y="205" text-anchor="start">D</text><text class="radar-label" x="79" y="205" text-anchor="end">I</text><text class="radar-label" x="28" y="141" text-anchor="end">C</text><text class="radar-label" x="47" y="61" text-anchor="end">T</text>
     </svg></div>
-    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":13,"m":20,"high":true},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":4,"m":20,"low":true},{"l":"D","s":7,"m":15},{"l":"I","s":8,"m":10,"high":true},{"l":"C","s":5,"m":10},{"l":"T","s":9,"m":10,"high":true}]'></div>
+    <div class="dim-list" id="dims" data-dims='[{"l":"V","s":16,"m":20,"high":true},{"l":"E","s":0,"m":15,"inactive":true},{"l":"R","s":14,"m":20,"high":true},{"l":"D","s":13,"m":15,"high":true},{"l":"I","s":6,"m":10},{"l":"C","s":6,"m":10},{"l":"T","s":7,"m":10,"high":true}]'></div>
   </div>
   <div class="cta-bar"><a href="/" class="cta-link">View All 69 Evaluations</a><a href="/#subscribe" class="cta-link">Get Notified of Score Changes</a></div>
 </div>
